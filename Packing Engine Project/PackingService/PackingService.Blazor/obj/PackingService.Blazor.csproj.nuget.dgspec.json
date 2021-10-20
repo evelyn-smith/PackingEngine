@@ -1,0 +1,213 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Packing Engine Project\\Packing Engine Project\\Trunk\\Apps\\PackingService\\PackingService.Blazor\\PackingService.Blazor.csproj": {}
+  },
+  "projects": {
+    "C:\\Packing Engine Project\\Packing Engine Project\\Trunk\\Apps\\PackingService\\CromulentBisgetti.ContainerPacking\\CromulentBisgetti.ContainerPacking.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Packing Engine Project\\Packing Engine Project\\Trunk\\Apps\\PackingService\\CromulentBisgetti.ContainerPacking\\CromulentBisgetti.ContainerPacking.csproj",
+        "projectName": "CromulentBisgetti.ContainerPacking",
+        "projectPath": "C:\\Packing Engine Project\\Packing Engine Project\\Trunk\\Apps\\PackingService\\CromulentBisgetti.ContainerPacking\\CromulentBisgetti.ContainerPacking.csproj",
+        "packagesPath": "C:\\Users\\ers007\\.nuget\\packages\\",
+        "outputPath": "C:\\Packing Engine Project\\Packing Engine Project\\Trunk\\Apps\\PackingService\\CromulentBisgetti.ContainerPacking\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\ers007\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "dependencies": {
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            },
+            "Serilog": {
+              "target": "Package",
+              "version": "[2.10.0-dev-01187, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Packing Engine Project\\Packing Engine Project\\Trunk\\Apps\\PackingService\\PackingService.Blazor\\PackingService.Blazor.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Packing Engine Project\\Packing Engine Project\\Trunk\\Apps\\PackingService\\PackingService.Blazor\\PackingService.Blazor.csproj",
+        "projectName": "PackingService.Blazor",
+        "projectPath": "C:\\Packing Engine Project\\Packing Engine Project\\Trunk\\Apps\\PackingService\\PackingService.Blazor\\PackingService.Blazor.csproj",
+        "packagesPath": "C:\\Users\\ers007\\.nuget\\packages\\",
+        "outputPath": "C:\\Packing Engine Project\\Packing Engine Project\\Trunk\\Apps\\PackingService\\PackingService.Blazor\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\ers007\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
+            "projectReferences": {
+              "C:\\Packing Engine Project\\Packing Engine Project\\Trunk\\Apps\\PackingService\\PackingService.Sql\\PackingService.Sql.csproj": {
+                "projectPath": "C:\\Packing Engine Project\\Packing Engine Project\\Trunk\\Apps\\PackingService\\PackingService.Sql\\PackingService.Sql.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Serilog": {
+              "target": "Package",
+              "version": "[2.10.0-dev-01187, )"
+            },
+            "Serilog.Sinks.Console": {
+              "target": "Package",
+              "version": "[4.0.0-dev-00839, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Packing Engine Project\\Packing Engine Project\\Trunk\\Apps\\PackingService\\PackingService.Sql\\PackingService.Sql.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Packing Engine Project\\Packing Engine Project\\Trunk\\Apps\\PackingService\\PackingService.Sql\\PackingService.Sql.csproj",
+        "projectName": "PackingService.Sql",
+        "projectPath": "C:\\Packing Engine Project\\Packing Engine Project\\Trunk\\Apps\\PackingService\\PackingService.Sql\\PackingService.Sql.csproj",
+        "packagesPath": "C:\\Users\\ers007\\.nuget\\packages\\",
+        "outputPath": "C:\\Packing Engine Project\\Packing Engine Project\\Trunk\\Apps\\PackingService\\PackingService.Sql\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\ers007\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
+            "projectReferences": {
+              "C:\\Packing Engine Project\\Packing Engine Project\\Trunk\\Apps\\PackingService\\CromulentBisgetti.ContainerPacking\\CromulentBisgetti.ContainerPacking.csproj": {
+                "projectPath": "C:\\Packing Engine Project\\Packing Engine Project\\Trunk\\Apps\\PackingService\\CromulentBisgetti.ContainerPacking\\CromulentBisgetti.ContainerPacking.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "dependencies": {
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            },
+            "Serilog": {
+              "target": "Package",
+              "version": "[2.10.0-dev-01187, )"
+            },
+            "linq2db": {
+              "target": "Package",
+              "version": "[2.9.8, )"
+            },
+            "linq2db.SqlServer": {
+              "target": "Package",
+              "version": "[2.9.8, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

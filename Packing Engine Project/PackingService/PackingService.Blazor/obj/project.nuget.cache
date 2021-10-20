@@ -1,0 +1,26 @@
+{
+  "version": 2,
+  "dgSpecHash": "g+mnzf2jhy5T5wVhma9vTOH1UOisetUSrn7UvIwuwUkBSVk9P9Qsbt9QjsXOK3nVDeGU66SAVJRsEkjhS8ogWw==",
+  "success": true,
+  "projectFilePath": "C:\\Packing Engine Project\\Packing Engine Project\\Trunk\\Apps\\PackingService\\PackingService.Blazor\\PackingService.Blazor.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ers007\\.nuget\\packages\\linq2db\\2.9.8\\linq2db.2.9.8.nupkg.sha512",
+    "C:\\Users\\ers007\\.nuget\\packages\\linq2db.sqlserver\\2.9.8\\linq2db.sqlserver.2.9.8.nupkg.sha512",
+    "C:\\Users\\ers007\\.nuget\\packages\\microsoft.netcore.platforms\\2.0.0\\microsoft.netcore.platforms.2.0.0.nupkg.sha512",
+    "C:\\Users\\ers007\\.nuget\\packages\\microsoft.win32.registry\\4.5.0\\microsoft.win32.registry.4.5.0.nupkg.sha512",
+    "C:\\Users\\ers007\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.5.0\\runtime.native.system.data.sqlclient.sni.4.5.0.nupkg.sha512",
+    "C:\\Users\\ers007\\.nuget\\packages\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
+    "C:\\Users\\ers007\\.nuget\\packages\\runtime.win-x64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
+    "C:\\Users\\ers007\\.nuget\\packages\\runtime.win-x86.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
+    "C:\\Users\\ers007\\.nuget\\packages\\serilog\\2.10.0-dev-01187\\serilog.2.10.0-dev-01187.nupkg.sha512",
+    "C:\\Users\\ers007\\.nuget\\packages\\serilog.sinks.console\\4.0.0-dev-00839\\serilog.sinks.console.4.0.0-dev-00839.nupkg.sha512",
+    "C:\\Users\\ers007\\.nuget\\packages\\system.componentmodel.annotations\\4.5.0\\system.componentmodel.annotations.4.5.0.nupkg.sha512",
+    "C:\\Users\\ers007\\.nuget\\packages\\system.data.datasetextensions\\4.5.0\\system.data.datasetextensions.4.5.0.nupkg.sha512",
+    "C:\\Users\\ers007\\.nuget\\packages\\system.data.sqlclient\\4.6.0\\system.data.sqlclient.4.6.0.nupkg.sha512",
+    "C:\\Users\\ers007\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.0\\system.runtime.compilerservices.unsafe.4.5.0.nupkg.sha512",
+    "C:\\Users\\ers007\\.nuget\\packages\\system.security.accesscontrol\\4.5.0\\system.security.accesscontrol.4.5.0.nupkg.sha512",
+    "C:\\Users\\ers007\\.nuget\\packages\\system.security.principal.windows\\4.5.0\\system.security.principal.windows.4.5.0.nupkg.sha512",
+    "C:\\Users\\ers007\\.nuget\\packages\\system.text.encoding.codepages\\4.5.0\\system.text.encoding.codepages.4.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}

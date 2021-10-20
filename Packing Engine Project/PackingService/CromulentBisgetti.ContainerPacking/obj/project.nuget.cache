@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "fa+5p23voy9qXw9Y0Qz/47IKwWmxFYrWY47YatdGv88cH/pnUWrPk0ZKLvlaXrO/luHiigRADLAbaLETZtORKQ==",
+  "success": true,
+  "projectFilePath": "C:\\Packing Engine Project\\Packing Engine Project\\Trunk\\Apps\\PackingService\\CromulentBisgetti.ContainerPacking\\CromulentBisgetti.ContainerPacking.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ers007\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\ers007\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\ers007\\.nuget\\packages\\serilog\\2.10.0-dev-01187\\serilog.2.10.0-dev-01187.nupkg.sha512"
+  ],
+  "logs": []
+}
