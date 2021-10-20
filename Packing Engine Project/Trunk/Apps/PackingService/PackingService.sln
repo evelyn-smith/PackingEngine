@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29806.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CromulentBisgetti.ContainerPacking", "CromulentBisgetti.ContainerPacking\CromulentBisgetti.ContainerPacking.csproj", "{49D6AD56-1545-4864-AC6E-80A8922742DF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CromulentBisgetti.ContainerPackingTests", "CromulentBisgetti.ContainerPackingTests\CromulentBisgetti.ContainerPackingTests.csproj", "{6D1B78A9-06D7-4461-A1C0-C3C09DA54317}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PackingService.Sql", "PackingService.Sql\PackingService.Sql.csproj", "{68A0E26D-C951-459B-B867-C9F1517E9ED9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PackingService.Blazor", "PackingService.Blazor\PackingService.Blazor.csproj", "{73D12C80-AA5B-4FBE-8EAC-4A73EB35EF6E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{49D6AD56-1545-4864-AC6E-80A8922742DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49D6AD56-1545-4864-AC6E-80A8922742DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49D6AD56-1545-4864-AC6E-80A8922742DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49D6AD56-1545-4864-AC6E-80A8922742DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D1B78A9-06D7-4461-A1C0-C3C09DA54317}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D1B78A9-06D7-4461-A1C0-C3C09DA54317}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D1B78A9-06D7-4461-A1C0-C3C09DA54317}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D1B78A9-06D7-4461-A1C0-C3C09DA54317}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68A0E26D-C951-459B-B867-C9F1517E9ED9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68A0E26D-C951-459B-B867-C9F1517E9ED9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68A0E26D-C951-459B-B867-C9F1517E9ED9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68A0E26D-C951-459B-B867-C9F1517E9ED9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73D12C80-AA5B-4FBE-8EAC-4A73EB35EF6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73D12C80-AA5B-4FBE-8EAC-4A73EB35EF6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73D12C80-AA5B-4FBE-8EAC-4A73EB35EF6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73D12C80-AA5B-4FBE-8EAC-4A73EB35EF6E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EFD0501E-3C48-42A7-830E-9FFA9FD9F985}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://marshalltownschneider.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = CromulentBisgetti.ContainerPacking\\CromulentBisgetti.ContainerPacking.csproj
+		SccProjectName1 = CromulentBisgetti.ContainerPacking
+		SccLocalPath1 = CromulentBisgetti.ContainerPacking
+		SccProjectUniqueName2 = CromulentBisgetti.ContainerPackingTests\\CromulentBisgetti.ContainerPackingTests.csproj
+		SccProjectName2 = CromulentBisgetti.ContainerPackingTests
+		SccLocalPath2 = CromulentBisgetti.ContainerPackingTests
+		SccProjectUniqueName3 = PackingService.Sql\\PackingService.Sql.csproj
+		SccProjectName3 = PackingService.Sql
+		SccLocalPath3 = PackingService.Sql
+		SccProjectUniqueName4 = PackingService.Blazor\\PackingService.Blazor.csproj
+		SccProjectName4 = PackingService.Blazor
+		SccLocalPath4 = PackingService.Blazor
+	EndGlobalSection
+EndGlobal
