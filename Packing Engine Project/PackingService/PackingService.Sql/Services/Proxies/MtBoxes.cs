@@ -42,14 +42,16 @@ namespace PackingService.Sql.Services.Proxies
         public List<Item> GetItemsToPack(string custOrderNo)
         {
             var items = new List<Item>();
+            
             using (var db = new PackingEngineDB())
             {
-                //TODO: Talk to Steve about ItemsToPalletizes
-                //foreach (var i in db.ItemsToPalletizes.Where(x => x.CustOrderNo == custOrderNo))
-                //{
-                //    var item = new Item(i.Alias, (decimal)i.BoxLength, (decimal)i.BoxHeight, (decimal)i.BoxWidth, i.QTY);
-                //    items.Add(item);
-                //}
+                ////TODO: Talk to Steve about ItemsToPalletizes
+                foreach (var i in db.ItemsToPalletizes.Where(x => x.CustOrderNo == custOrderNo))
+                {
+                    
+                    var item = new Item(i.Alias, (decimal)i.BoxLength, (decimal)i.BoxHeight, (decimal)i.BoxWidth, i.QTY);
+                    //items.Add(item);
+                }
             }
 
             var groupedItems = GroupItems(items);

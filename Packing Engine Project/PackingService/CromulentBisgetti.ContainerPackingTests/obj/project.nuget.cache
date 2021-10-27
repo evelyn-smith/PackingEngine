@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "6WDm03r7ngWaU9IZ2Vw6swzhhU1hsTnhwsn1rtefsuejcMFWRPDui56wc7KbNZiCpadrrsK+eAELs0fkDBGD8g==",
+  "dgSpecHash": "1LgNWWyJfrzbg7htVux0+dcH/Evtz4PProHzeO6w93WkMOUXeGKuLDFSR7JlW9apOr9ppQqHf3q5Dm5HrI1Shg==",
   "success": true,
-  "projectFilePath": "C:\\Packing Engine Project\\Packing Engine Project\\Trunk\\Apps\\PackingService\\CromulentBisgetti.ContainerPackingTests\\CromulentBisgetti.ContainerPackingTests.csproj",
+  "projectFilePath": "C:\\PackingEngine\\CromulentBisgetti.ContainerPackingTests\\CromulentBisgetti.ContainerPackingTests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ers007\\.nuget\\packages\\microsoft.codecoverage\\15.8.0\\microsoft.codecoverage.15.8.0.nupkg.sha512",
     "C:\\Users\\ers007\\.nuget\\packages\\microsoft.csharp\\4.0.1\\microsoft.csharp.4.0.1.nupkg.sha512",

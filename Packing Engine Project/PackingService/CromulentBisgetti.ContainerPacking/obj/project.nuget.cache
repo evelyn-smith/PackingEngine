@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "fa+5p23voy9qXw9Y0Qz/47IKwWmxFYrWY47YatdGv88cH/pnUWrPk0ZKLvlaXrO/luHiigRADLAbaLETZtORKQ==",
+  "dgSpecHash": "h0M3JMRO6E0tIhr4WjYfq8kTVzj10ylW0KQq4HqjyhUeuoFRZ5CNrxjSUKqld1iJo5ffGpZ9Ce62GC28zg+RRQ==",
   "success": true,
-  "projectFilePath": "C:\\Packing Engine Project\\Packing Engine Project\\Trunk\\Apps\\PackingService\\CromulentBisgetti.ContainerPacking\\CromulentBisgetti.ContainerPacking.csproj",
+  "projectFilePath": "C:\\PackingEngine\\CromulentBisgetti.ContainerPacking\\CromulentBisgetti.ContainerPacking.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ers007\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\ers007\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",

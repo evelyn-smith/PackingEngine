@@ -66,6 +66,7 @@ namespace CromulentBisgetti.ContainerPacking.Algorithms
         private ScrapPad _smallestZ;
         private ScrapPad _trash;
 
+        // if layer edge is evened
         private bool _evened;
         private bool _hundredPercentPacked = false;
         private bool _layerDone;
@@ -73,9 +74,11 @@ namespace CromulentBisgetti.ContainerPacking.Algorithms
         private bool _packingBest = false;
         private bool _quit = false;
 
+        // better fit than boxi
         private int _bboxi;
         private int _bestIteration;
         private int _bestVariant;
+        // index of current box
         private int _boxi;
         private int _cboxi;
         private int _layerListLen;
@@ -123,8 +126,14 @@ namespace CromulentBisgetti.ContainerPacking.Algorithms
         /// </summary>
         private void AnalyzeBox(decimal hmx, decimal hy, decimal hmy, decimal hz, decimal hmz, decimal dim1, decimal dim2, decimal dim3)
         {
+            // NOTE: Look where AnalyzeBox is called to see where these orientations (dim1, 2, 3) are passed in to restrict changing orientation of boxes
+
+            // if xdim of orientation of box <= max x val of current gap
+            // and ydim of orientation of box <= max y val
+            // and zdim of orientation of box <= max z val
             if (dim1 <= hmx && dim2 <= hmy && dim3 <= hmz)
             {
+                // if ydim of orientation of box <= current layer thickness
                 if (dim2 <= hy)
                 {
                     if (hy - dim2 < _bfy)
@@ -199,6 +208,7 @@ namespace CromulentBisgetti.ContainerPacking.Algorithms
         /// </summary>
         private void CheckFound()
         {
+            // _evened means edge of layer is evened
             _evened = false;
 
             if (_boxi != 0)
@@ -402,6 +412,7 @@ namespace CromulentBisgetti.ContainerPacking.Algorithms
             _boxi = 0;
             _bboxi = 0;
 
+            // loops for every item in list
             for (y = 1; y <= _itemsToPackCount; y = y + _itemsToPack[y].Quantity)
             {
                 for (_x = y; _x < _x + _itemsToPack[y].Quantity - 1; _x++)
@@ -413,8 +424,10 @@ namespace CromulentBisgetti.ContainerPacking.Algorithms
 
                 if (_x > _itemsToPackCount) return;
 
+                // *TODO* Implement checking for if box can be flipped here
                 AnalyzeBox(hmx, hy, hmy, hz, hmz, _itemsToPack[_x].Dim1, _itemsToPack[_x].Dim2, _itemsToPack[_x].Dim3);
 
+                // if box is cube, we don't check each orientation
                 if ((_itemsToPack[_x].Dim1 == _itemsToPack[_x].Dim3) && (_itemsToPack[_x].Dim3 == _itemsToPack[_x].Dim2)) continue;
 
                 AnalyzeBox(hmx, hy, hmy, hz, hmz, _itemsToPack[_x].Dim1, _itemsToPack[_x].Dim3, _itemsToPack[_x].Dim2);

@@ -13,63 +13,63 @@ namespace PackingService.Blazor.Shared
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Components;
 #nullable restore
-#line 1 "C:\Packing Engine Project\Packing Engine Project\Trunk\Apps\PackingService\PackingService.Blazor\_Imports.razor"
+#line 1 "C:\PackingEngine\PackingService.Blazor\_Imports.razor"
 using System.Net.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\Packing Engine Project\Packing Engine Project\Trunk\Apps\PackingService\PackingService.Blazor\_Imports.razor"
+#line 2 "C:\PackingEngine\PackingService.Blazor\_Imports.razor"
 using Microsoft.AspNetCore.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Packing Engine Project\Packing Engine Project\Trunk\Apps\PackingService\PackingService.Blazor\_Imports.razor"
+#line 3 "C:\PackingEngine\PackingService.Blazor\_Imports.razor"
 using Microsoft.AspNetCore.Components.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "C:\Packing Engine Project\Packing Engine Project\Trunk\Apps\PackingService\PackingService.Blazor\_Imports.razor"
+#line 4 "C:\PackingEngine\PackingService.Blazor\_Imports.razor"
 using Microsoft.AspNetCore.Components.Forms;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "C:\Packing Engine Project\Packing Engine Project\Trunk\Apps\PackingService\PackingService.Blazor\_Imports.razor"
+#line 5 "C:\PackingEngine\PackingService.Blazor\_Imports.razor"
 using Microsoft.AspNetCore.Components.Routing;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "C:\Packing Engine Project\Packing Engine Project\Trunk\Apps\PackingService\PackingService.Blazor\_Imports.razor"
+#line 6 "C:\PackingEngine\PackingService.Blazor\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 7 "C:\Packing Engine Project\Packing Engine Project\Trunk\Apps\PackingService\PackingService.Blazor\_Imports.razor"
+#line 7 "C:\PackingEngine\PackingService.Blazor\_Imports.razor"
 using Microsoft.JSInterop;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 8 "C:\Packing Engine Project\Packing Engine Project\Trunk\Apps\PackingService\PackingService.Blazor\_Imports.razor"
+#line 8 "C:\PackingEngine\PackingService.Blazor\_Imports.razor"
 using PackingService.Blazor;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 9 "C:\Packing Engine Project\Packing Engine Project\Trunk\Apps\PackingService\PackingService.Blazor\_Imports.razor"
+#line 9 "C:\PackingEngine\PackingService.Blazor\_Imports.razor"
 using PackingService.Blazor.Shared;
 
 #line default
@@ -83,7 +83,7 @@ using PackingService.Blazor.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 33 "C:\Packing Engine Project\Packing Engine Project\Trunk\Apps\PackingService\PackingService.Blazor\Shared\NavMenu.razor"
+#line 33 "C:\PackingEngine\PackingService.Blazor\Shared\NavMenu.razor"
        
     private bool collapseNavMenu = false;
 

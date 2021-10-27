@@ -219,11 +219,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Packing Engine Project\\Packing Engine Project\\Trunk\\Apps\\PackingService\\CromulentBisgetti.ContainerPacking\\CromulentBisgetti.ContainerPacking.csproj",
+      "projectUniqueName": "C:\\PackingEngine\\CromulentBisgetti.ContainerPacking\\CromulentBisgetti.ContainerPacking.csproj",
       "projectName": "CromulentBisgetti.ContainerPacking",
-      "projectPath": "C:\\Packing Engine Project\\Packing Engine Project\\Trunk\\Apps\\PackingService\\CromulentBisgetti.ContainerPacking\\CromulentBisgetti.ContainerPacking.csproj",
+      "projectPath": "C:\\PackingEngine\\CromulentBisgetti.ContainerPacking\\CromulentBisgetti.ContainerPacking.csproj",
       "packagesPath": "C:\\Users\\ers007\\.nuget\\packages\\",
-      "outputPath": "C:\\Packing Engine Project\\Packing Engine Project\\Trunk\\Apps\\PackingService\\CromulentBisgetti.ContainerPacking\\obj\\",
+      "outputPath": "C:\\PackingEngine\\CromulentBisgetti.ContainerPacking\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ers007\\AppData\\Roaming\\NuGet\\NuGet.Config",

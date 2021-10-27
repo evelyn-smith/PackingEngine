@@ -28,9 +28,9 @@ namespace PackingService.Blazor.Classes
                 yield return
                     new ConnectionStringSettings
                     {
-                        Name = "TODO", //TODO
+                        Name = "PackingEngine", 
                         ProviderName = "SqlServer",
-                        ConnectionString = @"Server=;Database=;Trusted_Connection=True;Enlist=False;" //TODO: Put connection string here
+                        ConnectionString = @"Server=tcp:capstonepackingengine.database.windows.net,1433;Initial Catalog=PackingEngine;Persist Security Info=False;User ID=capstoneadmin;Password=Packing!Engine@;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;" //TODO: Put connection string here
                     };
             }
         }

@@ -18,7 +18,7 @@ namespace PackingService.Sql.Services.Models
 	/// <summary>
 	/// Database       : PackingEngine
 	/// Data Source    : tcp:capstonepackingengine.database.windows.net,1433
-	/// Server Version : 12.00.2195
+	/// Server Version : 12.00.2255
 	/// </summary>
 	public partial class PackingEngineDB : LinqToDB.Data.DataConnection
 	{
@@ -26,6 +26,7 @@ namespace PackingService.Sql.Services.Models
 		public ITable<BoxdataCarousel>      BoxdataCarousels      { get { return this.GetTable<BoxdataCarousel>(); } }
 		public ITable<BoxdataPallet>        BoxdataPallets        { get { return this.GetTable<BoxdataPallet>(); } }
 		public ITable<DatabaseFirewallRule> DatabaseFirewallRules { get { return this.GetTable<DatabaseFirewallRule>(); } }
+		public ITable<ItemsToPalletize>     ItemsToPalletizes     { get { return this.GetTable<ItemsToPalletize>(); } }
 		public ITable<OrderDetail>          OrderDetails          { get { return this.GetTable<OrderDetail>(); } }
 		public ITable<OrderResult>          OrderResults          { get { return this.GetTable<OrderResult>(); } }
 		public ITable<OrderStatus>          OrderStatus           { get { return this.GetTable<OrderStatus>(); } }
@@ -94,6 +95,24 @@ namespace PackingService.Sql.Services.Models
 		[Column("modify_date"),      NotNull ] public DateTime ModifyDate     { get; set; } // datetime
 	}
 
+	[Table(Schema="dbo", Name="ItemsToPalletize")]
+	public partial class ItemsToPalletize
+	{
+		[Column,     NotNull    ] public string  CustOrderNo  { get; set; } // varchar(6)
+		[Column,     NotNull    ] public string  Alias        { get; set; } // varchar(20)
+		[Column,     NotNull    ] public int     QTY          { get; set; } // int
+		[Column,     NotNull    ] public string  BoxNumber    { get; set; } // varchar(21)
+		[Column,     NotNull    ] public string  BoxName      { get; set; } // varchar(20)
+		[Column,     NotNull    ] public decimal BoxLength    { get; set; } // decimal(12, 2)
+		[Column,     NotNull    ] public decimal BoxWidth     { get; set; } // decimal(12, 2)
+		[Column,     NotNull    ] public decimal BoxHeight    { get; set; } // decimal(12, 2)
+		[Column,     NotNull    ] public decimal BoxWeight    { get; set; } // decimal(12, 2)
+		[Column,        Nullable] public int?    PalletNumber { get; set; } // int
+		[Column,        Nullable] public string  PalletName   { get; set; } // varchar(50)
+		[Column,        Nullable] public string  OSCOStatus   { get; set; } // varchar(50)
+		[PrimaryKey, Identity   ] public int     ITPID        { get; set; } // int
+	}
+
 	[Table(Schema="dbo", Name="OrderDetails")]
 	public partial class OrderDetail
 	{
@@ -158,6 +177,12 @@ namespace PackingService.Sql.Services.Models
 
 	public static partial class TableExtensions
 	{
+		public static ItemsToPalletize Find(this ITable<ItemsToPalletize> table, int ITPID)
+		{
+			return table.FirstOrDefault(t =>
+				t.ITPID == ITPID);
+		}
+
 		public static OrderDetail Find(this ITable<OrderDetail> table, int OrderDetailsID)
 		{
 			return table.FirstOrDefault(t =>
