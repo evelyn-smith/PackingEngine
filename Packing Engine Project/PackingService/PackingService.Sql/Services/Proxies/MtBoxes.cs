@@ -45,12 +45,10 @@ namespace PackingService.Sql.Services.Proxies
             
             using (var db = new PackingEngineDB())
             {
-                ////TODO: Talk to Steve about ItemsToPalletizes
                 foreach (var i in db.ItemsToPalletizes.Where(x => x.CustOrderNo == custOrderNo))
                 {
-                    
                     var item = new Item(i.Alias, (decimal)i.BoxLength, (decimal)i.BoxHeight, (decimal)i.BoxWidth, i.QTY);
-                    //items.Add(item);
+                    items.Add(item);
                 }
             }
 

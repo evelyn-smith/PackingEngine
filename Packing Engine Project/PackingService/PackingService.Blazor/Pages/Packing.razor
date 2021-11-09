@@ -113,16 +113,19 @@
                     </thead>
                     <tbody>
 
+                        @foreach (var box in _boxes)
+                        {
 
                         <tr>
                             <td></td>
-                            <td><input type="text" value="@_container.Id" /></td>
-                            <td><input type="text" value="@_container.Length" /></td>
-                            <td><input type="text" value="@_container.Width" /></td>
-                            <td><input type="text" value="@_container.Height" /></td>
-                            <td><input type="text" value="@_container.Volume" /></td>
+                            <td><input type="text" value="@box.Id" /></td>
+                            <td><input type="text" value="@box.Length" /></td>
+                            <td><input type="text" value="@box.Width" /></td>
+                            <td><input type="text" value="@box.Height" /></td>
+                            <td><input type="text" value="@box.Volume" /></td>
                             <td></td>
                         </tr>
+                        }
 
                     </tbody>
                 </table>
@@ -278,7 +281,7 @@
 @code {
     //private List<int> _algorithms = new List<int>();
     private List<Item> _items = new List<Item>();
-    //private List<Container> _containers = new List<Container>();
+    private List<Container> _boxes = new List<Container>();
     private Container _container = new Container("Pallet 72in", 40, 48, 72);
     private List<AlgorithmPackingResult> _packingResults;
 
@@ -292,10 +295,11 @@
     protected override async Task OnInitializedAsync()
     {
         _packingResults = new List<AlgorithmPackingResult>();
-        _custOrderNo = "M08173";
+        _custOrderNo = "R44999";
         //await GetAlgorithms();
         await GetItems();
         //await GetPallets();
+        await GetSmallPackageBoxes();
     }
     //Todo add call to pack what is in the DOM and render it
 
@@ -355,7 +359,7 @@
 
         _selectedPackingResult = 0;
         Visualize();
-        
+
     }
 
     private void Visualize()
@@ -440,11 +444,11 @@
     //    _containers = await BoxService.GetPalletsAsync();
     //}
 
-    //private async Task GetSmallPackageBoxes()
-    //{
-    //    _containerType = "Small Package";
-    //    _containers = await BoxService.GetSmallPackageBoxesAsync();
-    //}
+    private async Task GetSmallPackageBoxes()
+    {
+        _containerType = "Small Package";
+        _boxes = await BoxService.GetSmallPackageBoxesAsync();
+    }
 
     private async Task GetItems()
     {

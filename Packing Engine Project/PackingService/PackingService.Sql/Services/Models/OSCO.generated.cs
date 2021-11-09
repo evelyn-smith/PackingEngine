@@ -51,13 +51,14 @@ namespace PackingService.Sql.Services.Models
 	[Table(Schema="dbo", Name="boxdata")]
 	public partial class Boxdata
 	{
-		[Column(),              NotNull    ] public string  Name       { get; set; } // varchar(50)
-		[Column(),              NotNull    ] public double  Length     { get; set; } // float
-		[Column(),              NotNull    ] public double  Width      { get; set; } // float
-		[Column(),              NotNull    ] public double  Height     { get; set; } // float
-		[Column(),              NotNull    ] public double  MaxWeight  { get; set; } // float
-		[Column(),                 Nullable] public double? Weight     { get; set; } // float
-		[Column("COST_FACTOR"),    Nullable] public double? CostFactor { get; set; } // float
+		[Column(),              NotNull    ] public string  Name          { get; set; } // varchar(50)
+		[Column(),              NotNull    ] public double  Length        { get; set; } // float
+		[Column(),              NotNull    ] public double  Width         { get; set; } // float
+		[Column(),              NotNull    ] public double  Height        { get; set; } // float
+		[Column(),              NotNull    ] public double  MaxWeight     { get; set; } // float
+		[Column(),                 Nullable] public double? Weight        { get; set; } // float
+		[Column("COST_FACTOR"),    Nullable] public double? CostFactor    { get; set; } // float
+		[Column(),              NotNull    ] public bool    CanBeFlagpole { get; set; } // bit
 	}
 
 	[Table(Schema="dbo", Name="boxdata_Carousel")]
