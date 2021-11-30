@@ -99,19 +99,20 @@ namespace PackingService.Sql.Services.Models
 	[Table(Schema="dbo", Name="ItemsToPalletize")]
 	public partial class ItemsToPalletize
 	{
-		[Column,     NotNull    ] public string  CustOrderNo  { get; set; } // varchar(6)
-		[Column,     NotNull    ] public string  Alias        { get; set; } // varchar(20)
-		[Column,     NotNull    ] public int     QTY          { get; set; } // int
-		[Column,     NotNull    ] public string  BoxNumber    { get; set; } // varchar(21)
-		[Column,     NotNull    ] public string  BoxName      { get; set; } // varchar(20)
-		[Column,     NotNull    ] public decimal BoxLength    { get; set; } // decimal(12, 2)
-		[Column,     NotNull    ] public decimal BoxWidth     { get; set; } // decimal(12, 2)
-		[Column,     NotNull    ] public decimal BoxHeight    { get; set; } // decimal(12, 2)
-		[Column,     NotNull    ] public decimal BoxWeight    { get; set; } // decimal(12, 2)
-		[Column,        Nullable] public int?    PalletNumber { get; set; } // int
-		[Column,        Nullable] public string  PalletName   { get; set; } // varchar(50)
-		[Column,        Nullable] public string  OSCOStatus   { get; set; } // varchar(50)
-		[PrimaryKey, Identity   ] public int     ITPID        { get; set; } // int
+		[Column,     NotNull    ] public string  CustOrderNo   { get; set; } // varchar(6)
+		[Column,     NotNull    ] public string  Alias         { get; set; } // varchar(20)
+		[Column,     NotNull    ] public int     QTY           { get; set; } // int
+		[Column,     NotNull    ] public string  BoxNumber     { get; set; } // varchar(21)
+		[Column,     NotNull    ] public string  BoxName       { get; set; } // varchar(20)
+		[Column,     NotNull    ] public decimal BoxLength     { get; set; } // decimal(12, 2)
+		[Column,     NotNull    ] public decimal BoxWidth      { get; set; } // decimal(12, 2)
+		[Column,     NotNull    ] public decimal BoxHeight     { get; set; } // decimal(12, 2)
+		[Column,     NotNull    ] public decimal BoxWeight     { get; set; } // decimal(12, 2)
+		[Column,        Nullable] public int?    PalletNumber  { get; set; } // int
+		[Column,        Nullable] public string  PalletName    { get; set; } // varchar(50)
+		[Column,        Nullable] public string  OSCOStatus    { get; set; } // varchar(50)
+		[PrimaryKey, Identity   ] public int     ITPID         { get; set; } // int
+		[Column,     NotNull    ] public bool    CanBeFlagpole { get; set; } // bit
 	}
 
 	[Table(Schema="dbo", Name="OrderDetails")]

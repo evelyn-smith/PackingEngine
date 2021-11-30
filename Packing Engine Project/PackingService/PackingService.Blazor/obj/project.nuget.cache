@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+GAKA00RI2QLo71lCGhOcpN5H5Y9xfhHscKuo8DI4mIBSCsr0M77vkwN1T3ONzQRbwHSHJ/RmBB3a+35UaDrCA==",
+  "dgSpecHash": "z5UbVm1XuqpK4SSCNMZJN1tzv53pc3qJdwFtFlOPIAKiPjqlhIqjiT0TijLh2oYzOUpbU+aoEv2sT8NPLx3UnA==",
   "success": true,
-  "projectFilePath": "C:\\PackingEngine\\PackingService.Blazor\\PackingService.Blazor.csproj",
+  "projectFilePath": "C:\\Users\\ers007\\source\\repos\\PackingEngine\\Packing Engine Project\\PackingService\\PackingService.Blazor\\PackingService.Blazor.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ers007\\.nuget\\packages\\linq2db\\2.9.8\\linq2db.2.9.8.nupkg.sha512",
     "C:\\Users\\ers007\\.nuget\\packages\\linq2db.sqlserver\\2.9.8\\linq2db.sqlserver.2.9.8.nupkg.sha512",

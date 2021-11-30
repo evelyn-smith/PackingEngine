@@ -45,7 +45,7 @@ namespace CromulentBisgetti.ContainerPackingTests
 						{
 							string[] itemArray = reader.ReadLine().Split(' ');
 
-							Item item = new Item("0", Convert.ToDecimal(itemArray[1]), Convert.ToDecimal(itemArray[3]), Convert.ToDecimal(itemArray[5]), Convert.ToInt32(itemArray[7]));
+							Item item = new Item("0", Convert.ToDecimal(itemArray[1]), Convert.ToDecimal(itemArray[3]), Convert.ToDecimal(itemArray[5]), Convert.ToInt32(itemArray[7]), true);
 							itemsToPack.Add(item);
 						}
 

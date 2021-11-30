@@ -13,77 +13,77 @@ namespace PackingService.Blazor.Pages
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Components;
 #nullable restore
-#line 1 "C:\PackingEngine\PackingService.Blazor\_Imports.razor"
+#line 1 "C:\Users\ers007\source\repos\PackingEngine\Packing Engine Project\PackingService\PackingService.Blazor\_Imports.razor"
 using System.Net.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\PackingEngine\PackingService.Blazor\_Imports.razor"
+#line 2 "C:\Users\ers007\source\repos\PackingEngine\Packing Engine Project\PackingService\PackingService.Blazor\_Imports.razor"
 using Microsoft.AspNetCore.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\PackingEngine\PackingService.Blazor\_Imports.razor"
+#line 3 "C:\Users\ers007\source\repos\PackingEngine\Packing Engine Project\PackingService\PackingService.Blazor\_Imports.razor"
 using Microsoft.AspNetCore.Components.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "C:\PackingEngine\PackingService.Blazor\_Imports.razor"
+#line 4 "C:\Users\ers007\source\repos\PackingEngine\Packing Engine Project\PackingService\PackingService.Blazor\_Imports.razor"
 using Microsoft.AspNetCore.Components.Forms;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "C:\PackingEngine\PackingService.Blazor\_Imports.razor"
+#line 5 "C:\Users\ers007\source\repos\PackingEngine\Packing Engine Project\PackingService\PackingService.Blazor\_Imports.razor"
 using Microsoft.AspNetCore.Components.Routing;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "C:\PackingEngine\PackingService.Blazor\_Imports.razor"
+#line 6 "C:\Users\ers007\source\repos\PackingEngine\Packing Engine Project\PackingService\PackingService.Blazor\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 7 "C:\PackingEngine\PackingService.Blazor\_Imports.razor"
+#line 7 "C:\Users\ers007\source\repos\PackingEngine\Packing Engine Project\PackingService\PackingService.Blazor\_Imports.razor"
 using Microsoft.JSInterop;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 8 "C:\PackingEngine\PackingService.Blazor\_Imports.razor"
+#line 8 "C:\Users\ers007\source\repos\PackingEngine\Packing Engine Project\PackingService\PackingService.Blazor\_Imports.razor"
 using PackingService.Blazor;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 9 "C:\PackingEngine\PackingService.Blazor\_Imports.razor"
+#line 9 "C:\Users\ers007\source\repos\PackingEngine\Packing Engine Project\PackingService\PackingService.Blazor\_Imports.razor"
 using PackingService.Blazor.Shared;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\PackingEngine\PackingService.Blazor\Pages\Packing.razor"
+#line 3 "C:\Users\ers007\source\repos\PackingEngine\Packing Engine Project\PackingService\PackingService.Blazor\Pages\Packing.razor"
 using CromulentBisgetti.ContainerPacking.Entities;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "C:\PackingEngine\PackingService.Blazor\Pages\Packing.razor"
+#line 4 "C:\Users\ers007\source\repos\PackingEngine\Packing Engine Project\PackingService\PackingService.Blazor\Pages\Packing.razor"
 using PackingService.Blazor.Data;
 
 #line default
@@ -98,11 +98,11 @@ using PackingService.Blazor.Data;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 278 "C:\PackingEngine\PackingService.Blazor\Pages\Packing.razor"
+#line 281 "C:\Users\ers007\source\repos\PackingEngine\Packing Engine Project\PackingService\PackingService.Blazor\Pages\Packing.razor"
        
     //private List<int> _algorithms = new List<int>();
     private List<Item> _items = new List<Item>();
-    //private List<Container> _containers = new List<Container>();
+    private List<Container> _boxes = new List<Container>();
     private Container _container = new Container("Pallet 72in", 40, 48, 72);
     private List<AlgorithmPackingResult> _packingResults;
 
@@ -116,10 +116,11 @@ using PackingService.Blazor.Data;
     protected override async Task OnInitializedAsync()
     {
         _packingResults = new List<AlgorithmPackingResult>();
-        _custOrderNo = "M08173";
+        _custOrderNo = "R44999";
         //await GetAlgorithms();
         await GetItems();
         //await GetPallets();
+        await GetSmallPackageBoxes();
     }
     //Todo add call to pack what is in the DOM and render it
 
@@ -179,7 +180,7 @@ using PackingService.Blazor.Data;
 
         _selectedPackingResult = 0;
         Visualize();
-        
+
     }
 
     private void Visualize()
@@ -264,11 +265,11 @@ using PackingService.Blazor.Data;
     //    _containers = await BoxService.GetPalletsAsync();
     //}
 
-    //private async Task GetSmallPackageBoxes()
-    //{
-    //    _containerType = "Small Package";
-    //    _containers = await BoxService.GetSmallPackageBoxesAsync();
-    //}
+    private async Task GetSmallPackageBoxes()
+    {
+        _containerType = "Small Package";
+        _boxes = await BoxService.GetSmallPackageBoxesAsync();
+    }
 
     private async Task GetItems()
     {

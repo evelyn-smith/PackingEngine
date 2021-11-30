@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Serilog;
+using CromulentBisgetti.ContainerPacking.Services.Contracts;
 
 namespace CromulentBisgetti.ContainerPacking.Algorithms
 {
@@ -13,6 +14,8 @@ namespace CromulentBisgetti.ContainerPacking.Algorithms
     /// </summary>
     public class EbAfit : IPackingAlgorithm
     {
+        
+
         #region Public Methods
 
         /// <summary>
@@ -432,8 +435,12 @@ namespace CromulentBisgetti.ContainerPacking.Algorithms
 
                 AnalyzeBox(hmx, hy, hmy, hz, hmz, _itemsToPack[_x].Dim1, _itemsToPack[_x].Dim3, _itemsToPack[_x].Dim2);
                 AnalyzeBox(hmx, hy, hmy, hz, hmz, _itemsToPack[_x].Dim2, _itemsToPack[_x].Dim1, _itemsToPack[_x].Dim3);
-                AnalyzeBox(hmx, hy, hmy, hz, hmz, _itemsToPack[_x].Dim2, _itemsToPack[_x].Dim3, _itemsToPack[_x].Dim1);
+                
                 AnalyzeBox(hmx, hy, hmy, hz, hmz, _itemsToPack[_x].Dim3, _itemsToPack[_x].Dim1, _itemsToPack[_x].Dim2);
+
+                // If the items can't be packed flagpole, we don't check for those orientations
+                if (!_itemsToPack[_x].CanBeFlagpole) continue;
+                AnalyzeBox(hmx, hy, hmy, hz, hmz, _itemsToPack[_x].Dim2, _itemsToPack[_x].Dim3, _itemsToPack[_x].Dim1);
                 AnalyzeBox(hmx, hy, hmy, hz, hmz, _itemsToPack[_x].Dim3, _itemsToPack[_x].Dim2, _itemsToPack[_x].Dim1);
             }
         }
@@ -545,9 +552,10 @@ namespace CromulentBisgetti.ContainerPacking.Algorithms
             _itemsPackedInOrder = new List<Item>();
             _result = new ContainerPackingResult();
 
+
             // The original code uses 1-based indexing everywhere. This fake entry is added to the beginning
             // of the list to make that possible.
-            _itemsToPack.Add(new Item("0", 0, 0, 0, 0));
+            _itemsToPack.Add(new Item("0", 0, 0, 0, 0, true));
 
             _layers = new List<Layer>();
             _itemsToPackCount = 0;
@@ -556,14 +564,14 @@ namespace CromulentBisgetti.ContainerPacking.Algorithms
             {
                 for (int i = 1; i <= item.Quantity; i++)
                 {
-                    Item newItem = new Item(item.Id, item.Dim1, item.Dim2, item.Dim3, item.Quantity);
+                    Item newItem = new Item(item.Id, item.Dim1, item.Dim2, item.Dim3, item.Quantity, item.CanBeFlagpole);
                     _itemsToPack.Add(newItem);
                 }
 
                 _itemsToPackCount += item.Quantity;
             }
 
-            _itemsToPack.Add(new Item("0", 0, 0, 0, 0));
+            _itemsToPack.Add(new Item("0", 0, 0, 0, 0, true));
 
             _totalContainerVolume = container.Length * container.Height * container.Width;
             _totalItemVolume = 0.0M;

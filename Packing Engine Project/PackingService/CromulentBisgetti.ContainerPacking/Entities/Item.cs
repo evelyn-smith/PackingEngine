@@ -26,7 +26,7 @@ namespace CromulentBisgetti.ContainerPacking.Entities
 		/// <param name="dim2">The length of another of the three item dimensions.</param>
 		/// <param name="dim3">The length of the other of the three item dimensions.</param>
 		/// <param name="itemQuantity">The item quantity.</param>
-		public Item(string id, decimal dim1, decimal dim2, decimal dim3, int quantity)
+		public Item(string id, decimal dim1, decimal dim2, decimal dim3, int quantity, bool canBeFlagpole)
 		{
 			this.Id = id;
 			this.Dim1 = dim1;
@@ -34,6 +34,7 @@ namespace CromulentBisgetti.ContainerPacking.Entities
 			this.Dim3 = dim3;
 			this._volume = dim1 * dim2 * dim3;
 			this.Quantity = quantity;
+			this.CanBeFlagpole = canBeFlagpole;
 		}
 
 		#endregion Constructors
@@ -163,6 +164,8 @@ namespace CromulentBisgetti.ContainerPacking.Entities
 		}
 
         public decimal MaxDimension => new List<decimal>() { Dim1, Dim2, Dim3 }.Max();
+
+		public bool CanBeFlagpole { get; set; }
 
         public override string ToString()
         {

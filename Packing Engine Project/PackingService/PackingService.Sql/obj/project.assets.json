@@ -1285,11 +1285,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\PackingEngine\\PackingService.Sql\\PackingService.Sql.csproj",
+      "projectUniqueName": "C:\\Users\\ers007\\source\\repos\\PackingEngine\\Packing Engine Project\\PackingService\\PackingService.Sql\\PackingService.Sql.csproj",
       "projectName": "PackingService.Sql",
-      "projectPath": "C:\\PackingEngine\\PackingService.Sql\\PackingService.Sql.csproj",
+      "projectPath": "C:\\Users\\ers007\\source\\repos\\PackingEngine\\Packing Engine Project\\PackingService\\PackingService.Sql\\PackingService.Sql.csproj",
       "packagesPath": "C:\\Users\\ers007\\.nuget\\packages\\",
-      "outputPath": "C:\\PackingEngine\\PackingService.Sql\\obj\\",
+      "outputPath": "C:\\Users\\ers007\\source\\repos\\PackingEngine\\Packing Engine Project\\PackingService\\PackingService.Sql\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ers007\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -1306,8 +1306,8 @@
         "netstandard2.0": {
           "targetAlias": "netstandard2.0",
           "projectReferences": {
-            "C:\\PackingEngine\\CromulentBisgetti.ContainerPacking\\CromulentBisgetti.ContainerPacking.csproj": {
-              "projectPath": "C:\\PackingEngine\\CromulentBisgetti.ContainerPacking\\CromulentBisgetti.ContainerPacking.csproj"
+            "C:\\Users\\ers007\\source\\repos\\PackingEngine\\Packing Engine Project\\PackingService\\CromulentBisgetti.ContainerPacking\\CromulentBisgetti.ContainerPacking.csproj": {
+              "projectPath": "C:\\Users\\ers007\\source\\repos\\PackingEngine\\Packing Engine Project\\PackingService\\CromulentBisgetti.ContainerPacking\\CromulentBisgetti.ContainerPacking.csproj"
             }
           }
         }
@@ -1351,7 +1351,7 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
       }
     }
   }

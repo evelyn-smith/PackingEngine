@@ -219,11 +219,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\PackingEngine\\CromulentBisgetti.ContainerPacking\\CromulentBisgetti.ContainerPacking.csproj",
+      "projectUniqueName": "C:\\Users\\ers007\\source\\repos\\PackingEngine\\Packing Engine Project\\PackingService\\CromulentBisgetti.ContainerPacking\\CromulentBisgetti.ContainerPacking.csproj",
       "projectName": "CromulentBisgetti.ContainerPacking",
-      "projectPath": "C:\\PackingEngine\\CromulentBisgetti.ContainerPacking\\CromulentBisgetti.ContainerPacking.csproj",
+      "projectPath": "C:\\Users\\ers007\\source\\repos\\PackingEngine\\Packing Engine Project\\PackingService\\CromulentBisgetti.ContainerPacking\\CromulentBisgetti.ContainerPacking.csproj",
       "packagesPath": "C:\\Users\\ers007\\.nuget\\packages\\",
-      "outputPath": "C:\\PackingEngine\\CromulentBisgetti.ContainerPacking\\obj\\",
+      "outputPath": "C:\\Users\\ers007\\source\\repos\\PackingEngine\\Packing Engine Project\\PackingService\\CromulentBisgetti.ContainerPacking\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ers007\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -273,7 +273,7 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
       }
     }
   }

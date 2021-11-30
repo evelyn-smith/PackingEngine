@@ -41,7 +41,7 @@ namespace CromulentBisgetti.ContainerPacking
 
                     itemsToPack.ForEach(item =>
                     {
-                        items.Add(new Item(item.Id, item.Dim1, item.Dim2, item.Dim3, item.Quantity));
+                        items.Add(new Item(item.Id, item.Dim1, item.Dim2, item.Dim3, item.Quantity, item.CanBeFlagpole));
                     });
 
                     Stopwatch stopwatch = new Stopwatch();
@@ -100,7 +100,7 @@ namespace CromulentBisgetti.ContainerPacking
 
             itemsToPack.ForEach(item =>
             {
-                var newItem = new Item(item.Id, item.Dim1, item.Dim2, item.Dim3, item.Quantity);
+                var newItem = new Item(item.Id, item.Dim1, item.Dim2, item.Dim3, item.Quantity, item.CanBeFlagpole);
                 if(item.MaxDimension > container.MaxDimension)
                 {
                     Log.Error(
@@ -205,9 +205,9 @@ namespace CromulentBisgetti.ContainerPacking
             var layerCount = item.Quantity / layerQuantity;
             var leftoverQuantity = item.Quantity % layerQuantity;
 
-            var layerItem = new Item($"{item.Id}-LayerOf-{layerQuantity}", layerX, layerY, layerZ,  layerCount);
+            var layerItem = new Item($"{item.Id}-LayerOf-{layerQuantity}", layerX, layerY, layerZ,  layerCount, item.CanBeFlagpole);
             //layerItem.IsLayer = true;
-            var leftoverItem = new Item(item.Id, item.Dim1, item.Dim2, item.Dim3, leftoverQuantity);
+            var leftoverItem = new Item(item.Id, item.Dim1, item.Dim2, item.Dim3, leftoverQuantity, item.CanBeFlagpole);
 
             Log.Information("Was able to layer {Item} into LayerCount {LayerCount} of LayerQuantity {LayerQuantity} with Leftover Quantity {LeftoverQuantity}", item, layerCount, layerQuantity, leftoverQuantity);
 

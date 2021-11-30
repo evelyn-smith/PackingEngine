@@ -143,6 +143,8 @@ function PackItemInRender() {
 
 	//TODO: Set the color of the cube differently if it is a layer https://stackoverflow.com/questions/14181631/changing-color-of-cube-in-three-js
 
+	console.log(self.ItemsToRender[itemIndex].CanBeFlagpole);
+
     var cube = new THREE.Mesh(itemGeometry, itemMaterial);
 	cube.position.set(self.ContainerOriginOffset.x + itemOriginOffset.x + self.ItemsToRender[itemIndex].CoordX, self.ContainerOriginOffset.y + itemOriginOffset.y + self.ItemsToRender[itemIndex].CoordY, self.ContainerOriginOffset.z + itemOriginOffset.z + self.ItemsToRender[itemIndex].CoordZ);
 	cube.name = 'cube' + itemIndex;
