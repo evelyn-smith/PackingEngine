@@ -110,8 +110,8 @@ namespace CromulentBisgetti.ContainerPacking
                 else
                 {
                     //Layer these first if possible-- Doing this by layer messes up the weighting method currently implemented
-                    //items.AddRange(LayerItems(container, newItem));
-                    items.Add(newItem);
+                    items.AddRange(LayerItems(container, newItem));
+                    //items.Add(newItem);
                 }
             });
 
