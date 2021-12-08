@@ -476,7 +476,6 @@ namespace CromulentBisgetti.ContainerPacking.Algorithms
             _bboxi = 0;
 
             // loops for every item in list
-            // Need to split _itemsToPack into 3 arrays, A, B, and C
             for (y = 1; y <= _itemsToPackCount; y = y + _itemsToPack[y].Quantity)
             {
                 for (_x = y; _x < _x + _itemsToPack[y].Quantity - 1; _x++)
@@ -495,14 +494,17 @@ namespace CromulentBisgetti.ContainerPacking.Algorithms
                 if ((_itemsToPack[_x].Dim1 == _itemsToPack[_x].Dim3) && (_itemsToPack[_x].Dim3 == _itemsToPack[_x].Dim2)) continue;
 
                 AnalyzeBox(hmx, hy, hmy, hz, hmz, _itemsToPack[_x].Dim1, _itemsToPack[_x].Dim3, _itemsToPack[_x].Dim2);
+                
+
+                AnalyzeBox(hmx, hy, hmy, hz, hmz, _itemsToPack[_x].Dim2, _itemsToPack[_x].Dim3, _itemsToPack[_x].Dim1);
+                AnalyzeBox(hmx, hy, hmy, hz, hmz, _itemsToPack[_x].Dim3, _itemsToPack[_x].Dim2, _itemsToPack[_x].Dim1);
+
+                // If the items can't be packed flagpole, we don't check for those orientations
+                if (!_itemsToPack[_x].CanBeFlagpole) continue;
                 AnalyzeBox(hmx, hy, hmy, hz, hmz, _itemsToPack[_x].Dim2, _itemsToPack[_x].Dim1, _itemsToPack[_x].Dim3);
 
                 AnalyzeBox(hmx, hy, hmy, hz, hmz, _itemsToPack[_x].Dim3, _itemsToPack[_x].Dim1, _itemsToPack[_x].Dim2);
 
-                // If the items can't be packed flagpole, we don't check for those orientations
-                //if(!_itemsToPack[_x].CanBeFlagpole) continue;
-                AnalyzeBox(hmx, hy, hmy, hz, hmz, _itemsToPack[_x].Dim2, _itemsToPack[_x].Dim3, _itemsToPack[_x].Dim1);
-                AnalyzeBox(hmx, hy, hmy, hz, hmz, _itemsToPack[_x].Dim3, _itemsToPack[_x].Dim2, _itemsToPack[_x].Dim1);
             }
         }
 
