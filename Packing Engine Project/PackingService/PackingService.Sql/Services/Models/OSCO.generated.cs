@@ -113,6 +113,8 @@ namespace PackingService.Sql.Services.Models
 		[Column,        Nullable] public string  OSCOStatus    { get; set; } // varchar(50)
 		[PrimaryKey, Identity   ] public int     ITPID         { get; set; } // int
 		[Column,     NotNull    ] public bool    CanBeFlagpole { get; set; } // bit
+		[Column,     NotNull    ] public char    CharWeight    { get; set; } // char(1)
+		[Column,     NotNull    ] public bool    AbnormalShape { get; set; } // bit
 	}
 
 	[Table(Schema="dbo", Name="OrderDetails")]

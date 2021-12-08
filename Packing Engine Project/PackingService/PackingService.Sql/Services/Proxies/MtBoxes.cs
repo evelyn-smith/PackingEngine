@@ -47,7 +47,7 @@ namespace PackingService.Sql.Services.Proxies
             {
                 foreach (var i in db.ItemsToPalletizes.Where(x => x.CustOrderNo == custOrderNo))
                 {
-                    var item = new Item(i.Alias, (decimal)i.BoxLength, (decimal)i.BoxHeight, (decimal)i.BoxWidth, i.QTY, i.CanBeFlagpole);
+                    var item = new Item(i.Alias, (decimal)i.BoxLength, (decimal)i.BoxHeight, (decimal)i.BoxWidth, i.QTY, i.CanBeFlagpole, i.CharWeight, i.AbnormalShape);
                     items.Add(item);
                 }
             }
@@ -64,7 +64,7 @@ namespace PackingService.Sql.Services.Proxies
             foreach (var group in groups)
             {
                 var defaultItem = group.FirstOrDefault();
-                var item = new Item(group.Key, defaultItem.Dim1, defaultItem.Dim2, defaultItem.Dim3, group.Count(), defaultItem.CanBeFlagpole);
+                var item = new Item(group.Key, defaultItem.Dim1, defaultItem.Dim2, defaultItem.Dim3, group.Count(), defaultItem.CanBeFlagpole, defaultItem.WeightDef, defaultItem.IsAbnormalShape);
                 newItems.Add(item);
             }
 

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ers007\\source\\repos\\PackingEngine\\Packing Engine Project\\PackingService\\PackingService.Blazor\\PackingService.Blazor.csproj": {}
+    "C:\\Users\\ers007\\Source\\Repos\\PackingEngine\\Packing Engine Project\\PackingService\\PackingService.Blazor\\PackingService.Blazor.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ers007\\source\\repos\\PackingEngine\\Packing Engine Project\\PackingService\\CromulentBisgetti.ContainerPacking\\CromulentBisgetti.ContainerPacking.csproj": {
+    "C:\\Users\\ers007\\Source\\Repos\\PackingEngine\\Packing Engine Project\\PackingService\\CromulentBisgetti.ContainerPacking\\CromulentBisgetti.ContainerPacking.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ers007\\source\\repos\\PackingEngine\\Packing Engine Project\\PackingService\\CromulentBisgetti.ContainerPacking\\CromulentBisgetti.ContainerPacking.csproj",
+        "projectUniqueName": "C:\\Users\\ers007\\Source\\Repos\\PackingEngine\\Packing Engine Project\\PackingService\\CromulentBisgetti.ContainerPacking\\CromulentBisgetti.ContainerPacking.csproj",
         "projectName": "CromulentBisgetti.ContainerPacking",
-        "projectPath": "C:\\Users\\ers007\\source\\repos\\PackingEngine\\Packing Engine Project\\PackingService\\CromulentBisgetti.ContainerPacking\\CromulentBisgetti.ContainerPacking.csproj",
+        "projectPath": "C:\\Users\\ers007\\Source\\Repos\\PackingEngine\\Packing Engine Project\\PackingService\\CromulentBisgetti.ContainerPacking\\CromulentBisgetti.ContainerPacking.csproj",
         "packagesPath": "C:\\Users\\ers007\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ers007\\source\\repos\\PackingEngine\\Packing Engine Project\\PackingService\\CromulentBisgetti.ContainerPacking\\obj\\",
+        "outputPath": "C:\\Users\\ers007\\Source\\Repos\\PackingEngine\\Packing Engine Project\\PackingService\\CromulentBisgetti.ContainerPacking\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ers007\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -65,14 +65,14 @@
         }
       }
     },
-    "C:\\Users\\ers007\\source\\repos\\PackingEngine\\Packing Engine Project\\PackingService\\PackingService.Blazor\\PackingService.Blazor.csproj": {
+    "C:\\Users\\ers007\\Source\\Repos\\PackingEngine\\Packing Engine Project\\PackingService\\PackingService.Blazor\\PackingService.Blazor.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ers007\\source\\repos\\PackingEngine\\Packing Engine Project\\PackingService\\PackingService.Blazor\\PackingService.Blazor.csproj",
+        "projectUniqueName": "C:\\Users\\ers007\\Source\\Repos\\PackingEngine\\Packing Engine Project\\PackingService\\PackingService.Blazor\\PackingService.Blazor.csproj",
         "projectName": "PackingService.Blazor",
-        "projectPath": "C:\\Users\\ers007\\source\\repos\\PackingEngine\\Packing Engine Project\\PackingService\\PackingService.Blazor\\PackingService.Blazor.csproj",
+        "projectPath": "C:\\Users\\ers007\\Source\\Repos\\PackingEngine\\Packing Engine Project\\PackingService\\PackingService.Blazor\\PackingService.Blazor.csproj",
         "packagesPath": "C:\\Users\\ers007\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ers007\\source\\repos\\PackingEngine\\Packing Engine Project\\PackingService\\PackingService.Blazor\\obj\\",
+        "outputPath": "C:\\Users\\ers007\\Source\\Repos\\PackingEngine\\Packing Engine Project\\PackingService\\PackingService.Blazor\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ers007\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -89,8 +89,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\ers007\\source\\repos\\PackingEngine\\Packing Engine Project\\PackingService\\PackingService.Sql\\PackingService.Sql.csproj": {
-                "projectPath": "C:\\Users\\ers007\\source\\repos\\PackingEngine\\Packing Engine Project\\PackingService\\PackingService.Sql\\PackingService.Sql.csproj"
+              "C:\\Users\\ers007\\Source\\Repos\\PackingEngine\\Packing Engine Project\\PackingService\\PackingService.Sql\\PackingService.Sql.csproj": {
+                "projectPath": "C:\\Users\\ers007\\Source\\Repos\\PackingEngine\\Packing Engine Project\\PackingService\\PackingService.Sql\\PackingService.Sql.csproj"
               }
             }
           }
@@ -136,14 +136,14 @@
         }
       }
     },
-    "C:\\Users\\ers007\\source\\repos\\PackingEngine\\Packing Engine Project\\PackingService\\PackingService.Sql\\PackingService.Sql.csproj": {
+    "C:\\Users\\ers007\\Source\\Repos\\PackingEngine\\Packing Engine Project\\PackingService\\PackingService.Sql\\PackingService.Sql.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ers007\\source\\repos\\PackingEngine\\Packing Engine Project\\PackingService\\PackingService.Sql\\PackingService.Sql.csproj",
+        "projectUniqueName": "C:\\Users\\ers007\\Source\\Repos\\PackingEngine\\Packing Engine Project\\PackingService\\PackingService.Sql\\PackingService.Sql.csproj",
         "projectName": "PackingService.Sql",
-        "projectPath": "C:\\Users\\ers007\\source\\repos\\PackingEngine\\Packing Engine Project\\PackingService\\PackingService.Sql\\PackingService.Sql.csproj",
+        "projectPath": "C:\\Users\\ers007\\Source\\Repos\\PackingEngine\\Packing Engine Project\\PackingService\\PackingService.Sql\\PackingService.Sql.csproj",
         "packagesPath": "C:\\Users\\ers007\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ers007\\source\\repos\\PackingEngine\\Packing Engine Project\\PackingService\\PackingService.Sql\\obj\\",
+        "outputPath": "C:\\Users\\ers007\\Source\\Repos\\PackingEngine\\Packing Engine Project\\PackingService\\PackingService.Sql\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ers007\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -160,8 +160,8 @@
           "netstandard2.0": {
             "targetAlias": "netstandard2.0",
             "projectReferences": {
-              "C:\\Users\\ers007\\source\\repos\\PackingEngine\\Packing Engine Project\\PackingService\\CromulentBisgetti.ContainerPacking\\CromulentBisgetti.ContainerPacking.csproj": {
-                "projectPath": "C:\\Users\\ers007\\source\\repos\\PackingEngine\\Packing Engine Project\\PackingService\\CromulentBisgetti.ContainerPacking\\CromulentBisgetti.ContainerPacking.csproj"
+              "C:\\Users\\ers007\\Source\\Repos\\PackingEngine\\Packing Engine Project\\PackingService\\CromulentBisgetti.ContainerPacking\\CromulentBisgetti.ContainerPacking.csproj": {
+                "projectPath": "C:\\Users\\ers007\\Source\\Repos\\PackingEngine\\Packing Engine Project\\PackingService\\CromulentBisgetti.ContainerPacking\\CromulentBisgetti.ContainerPacking.csproj"
               }
             }
           }

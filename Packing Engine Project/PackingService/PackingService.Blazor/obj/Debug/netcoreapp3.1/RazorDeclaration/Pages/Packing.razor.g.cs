@@ -13,83 +13,83 @@ namespace PackingService.Blazor.Pages
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Components;
 #nullable restore
-#line 1 "C:\Users\ers007\source\repos\PackingEngine\Packing Engine Project\PackingService\PackingService.Blazor\_Imports.razor"
+#line 1 "C:\Users\ers007\Source\Repos\PackingEngine\Packing Engine Project\PackingService\PackingService.Blazor\_Imports.razor"
 using System.Net.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\Users\ers007\source\repos\PackingEngine\Packing Engine Project\PackingService\PackingService.Blazor\_Imports.razor"
+#line 2 "C:\Users\ers007\Source\Repos\PackingEngine\Packing Engine Project\PackingService\PackingService.Blazor\_Imports.razor"
 using Microsoft.AspNetCore.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Users\ers007\source\repos\PackingEngine\Packing Engine Project\PackingService\PackingService.Blazor\_Imports.razor"
+#line 3 "C:\Users\ers007\Source\Repos\PackingEngine\Packing Engine Project\PackingService\PackingService.Blazor\_Imports.razor"
 using Microsoft.AspNetCore.Components.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "C:\Users\ers007\source\repos\PackingEngine\Packing Engine Project\PackingService\PackingService.Blazor\_Imports.razor"
+#line 4 "C:\Users\ers007\Source\Repos\PackingEngine\Packing Engine Project\PackingService\PackingService.Blazor\_Imports.razor"
 using Microsoft.AspNetCore.Components.Forms;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "C:\Users\ers007\source\repos\PackingEngine\Packing Engine Project\PackingService\PackingService.Blazor\_Imports.razor"
+#line 5 "C:\Users\ers007\Source\Repos\PackingEngine\Packing Engine Project\PackingService\PackingService.Blazor\_Imports.razor"
 using Microsoft.AspNetCore.Components.Routing;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "C:\Users\ers007\source\repos\PackingEngine\Packing Engine Project\PackingService\PackingService.Blazor\_Imports.razor"
+#line 6 "C:\Users\ers007\Source\Repos\PackingEngine\Packing Engine Project\PackingService\PackingService.Blazor\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 7 "C:\Users\ers007\source\repos\PackingEngine\Packing Engine Project\PackingService\PackingService.Blazor\_Imports.razor"
+#line 7 "C:\Users\ers007\Source\Repos\PackingEngine\Packing Engine Project\PackingService\PackingService.Blazor\_Imports.razor"
 using Microsoft.JSInterop;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 8 "C:\Users\ers007\source\repos\PackingEngine\Packing Engine Project\PackingService\PackingService.Blazor\_Imports.razor"
+#line 8 "C:\Users\ers007\Source\Repos\PackingEngine\Packing Engine Project\PackingService\PackingService.Blazor\_Imports.razor"
 using PackingService.Blazor;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 9 "C:\Users\ers007\source\repos\PackingEngine\Packing Engine Project\PackingService\PackingService.Blazor\_Imports.razor"
+#line 9 "C:\Users\ers007\Source\Repos\PackingEngine\Packing Engine Project\PackingService\PackingService.Blazor\_Imports.razor"
 using PackingService.Blazor.Shared;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Users\ers007\source\repos\PackingEngine\Packing Engine Project\PackingService\PackingService.Blazor\Pages\Packing.razor"
+#line 3 "C:\Users\ers007\Source\Repos\PackingEngine\Packing Engine Project\PackingService\PackingService.Blazor\Pages\Packing.razor"
 using CromulentBisgetti.ContainerPacking.Entities;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "C:\Users\ers007\source\repos\PackingEngine\Packing Engine Project\PackingService\PackingService.Blazor\Pages\Packing.razor"
+#line 4 "C:\Users\ers007\Source\Repos\PackingEngine\Packing Engine Project\PackingService\PackingService.Blazor\Pages\Packing.razor"
 using PackingService.Blazor.Data;
 
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/packing")]
+    [Microsoft.AspNetCore.Components.RouteAttribute("/")]
     public partial class Packing : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
@@ -98,7 +98,7 @@ using PackingService.Blazor.Data;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 281 "C:\Users\ers007\source\repos\PackingEngine\Packing Engine Project\PackingService\PackingService.Blazor\Pages\Packing.razor"
+#line 281 "C:\Users\ers007\Source\Repos\PackingEngine\Packing Engine Project\PackingService\PackingService.Blazor\Pages\Packing.razor"
        
     //private List<int> _algorithms = new List<int>();
     private List<Item> _items = new List<Item>();
@@ -116,7 +116,7 @@ using PackingService.Blazor.Data;
     protected override async Task OnInitializedAsync()
     {
         _packingResults = new List<AlgorithmPackingResult>();
-        _custOrderNo = "R44999";
+        _custOrderNo = "R4888";
         //await GetAlgorithms();
         await GetItems();
         //await GetPallets();

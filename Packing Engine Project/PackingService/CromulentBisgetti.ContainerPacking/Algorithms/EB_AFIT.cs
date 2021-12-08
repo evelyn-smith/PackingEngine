@@ -1,9 +1,8 @@
 ﻿using CromulentBisgetti.ContainerPacking.Entities;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Serilog;
-using CromulentBisgetti.ContainerPacking.Services.Contracts;
 
 namespace CromulentBisgetti.ContainerPacking.Algorithms
 {
@@ -14,7 +13,7 @@ namespace CromulentBisgetti.ContainerPacking.Algorithms
     /// </summary>
     public class EbAfit : IPackingAlgorithm
     {
-        
+
 
         #region Public Methods
 
@@ -27,6 +26,7 @@ namespace CromulentBisgetti.ContainerPacking.Algorithms
         public AlgorithmPackingResult Run(Container container, List<Item> items)
         {
             Initialize(container, items);
+            // Execute iterations clears previously packed items
             ExecuteIterations(container);
             Report(container);
 
@@ -34,6 +34,8 @@ namespace CromulentBisgetti.ContainerPacking.Algorithms
             result.AlgorithmId = (int)AlgorithmType.EbAfit;
             result.AlgorithmName = "EB-AFIT";
 
+
+            // TODO: Check all arrays for if stuff is packed
             for (int i = 1; i <= _itemsToPackCount; i++)
             {
                 _itemsToPack[i].Quantity = 1;
@@ -61,6 +63,10 @@ namespace CromulentBisgetti.ContainerPacking.Algorithms
         #region Private Variables
 
         private List<Item> _itemsToPack;
+        private List<Item> _itemsToPackCopy;
+        private List<Item> _itemsToPackA;
+        private List<Item> _itemsToPackB;
+        private List<Item> _itemsToPackC;
         private List<Item> _itemsPackedInOrder;
         private List<Layer> _layers;
         private ContainerPackingResult _result;
@@ -116,7 +122,8 @@ namespace CromulentBisgetti.ContainerPacking.Algorithms
         private decimal _pz;
         private decimal _remainpy;
         private decimal _remainpz;
-        private decimal _itemsToPackCount;
+        private decimal _itemsToPackCount, _itemsToPackCountCopy;
+        private decimal _itemsToPackCountA, _itemsToPackCountB, _itemsToPackCountC;
         private decimal _totalItemVolume;
         private decimal _totalContainerVolume;
 
@@ -331,6 +338,22 @@ namespace CromulentBisgetti.ContainerPacking.Algorithms
                         break;
                 }
 
+                if (_itemsToPackCountA != 0)
+                {
+                    _itemsToPack = _itemsToPackA;
+                    _itemsToPackCount = _itemsToPackCountA;
+                }
+                else if (_itemsToPackCountB != 0)
+                {
+                    _itemsToPack = _itemsToPackB;
+                    _itemsToPackCount = _itemsToPackCountB;
+                }
+                else if (_itemsToPackCountC != 0)
+                {
+                    _itemsToPack = _itemsToPackC;
+                    _itemsToPackCount = _itemsToPackCountC;
+                }
+
                 _layers.Add(new Layer { LayerEval = -1 });
                 ListCanditLayers();
                 _layers = _layers.OrderBy(l => l.LayerEval).ToList();
@@ -345,11 +368,48 @@ namespace CromulentBisgetti.ContainerPacking.Algorithms
                     _remainpy = _py;
                     _remainpz = _pz;
                     _packedItemCount = 0;
+                    // Here is where we should be assigning _itemsToPack, not initialize
+                    _itemsToPack = _itemsToPackCopy;
+                    _itemsToPackCount = _itemsToPackCountCopy;
 
+                    // makes all items in array unpacked
                     for (_x = 1; _x <= _itemsToPackCount; _x++)
                     {
                         _itemsToPack[_x].IsPacked = false;
                     }
+
+                    // clear itemsToPack before adding range?
+                    _itemsToPackA.Clear();
+                    _itemsToPackB.Clear();
+                    _itemsToPackC.Clear();
+
+                    _itemsToPackA.Add(new Item("0", 0, 0, 0, 0, true, 'A', false));
+                    _itemsToPackB.Add(new Item("0", 0, 0, 0, 0, true, 'B', false));
+
+                    _itemsToPackA.AddRange(_itemsToPack.Where<Item>(x => x.WeightDef == 'A').ToList());
+                    _itemsToPackB.AddRange(_itemsToPack.Where<Item>(x => x.WeightDef == 'B').ToList());
+                    _itemsToPackC.AddRange(_itemsToPack.Where<Item>(x => x.WeightDef == 'C').ToList());
+
+                    _itemsToPackA.Add(new Item("0", 0, 0, 0, 0, true, 'A', false));
+                    _itemsToPackB.Add(new Item("0", 0, 0, 0, 0, true, 'B', false));
+
+
+                    if (_itemsToPackCountA != 0)
+                    {
+                        _itemsToPack = _itemsToPackA;
+                        _itemsToPackCount = _itemsToPackCountA;
+                    }
+                    else if (_itemsToPackCountB != 0)
+                    {
+                        _itemsToPack = _itemsToPackB;
+                        _itemsToPackCount = _itemsToPackCountB;
+                    }
+                    else if (_itemsToPackCountC != 0)
+                    {
+                        _itemsToPack = _itemsToPackC;
+                        _itemsToPackCount = _itemsToPackCountC;
+                    }
+
 
                     do
                     {
@@ -416,6 +476,7 @@ namespace CromulentBisgetti.ContainerPacking.Algorithms
             _bboxi = 0;
 
             // loops for every item in list
+            // Need to split _itemsToPack into 3 arrays, A, B, and C
             for (y = 1; y <= _itemsToPackCount; y = y + _itemsToPack[y].Quantity)
             {
                 for (_x = y; _x < _x + _itemsToPack[y].Quantity - 1; _x++)
@@ -427,7 +488,7 @@ namespace CromulentBisgetti.ContainerPacking.Algorithms
 
                 if (_x > _itemsToPackCount) return;
 
-                // *TODO* Implement checking for if box can be flipped here
+
                 AnalyzeBox(hmx, hy, hmy, hz, hmz, _itemsToPack[_x].Dim1, _itemsToPack[_x].Dim2, _itemsToPack[_x].Dim3);
 
                 // if box is cube, we don't check each orientation
@@ -435,11 +496,11 @@ namespace CromulentBisgetti.ContainerPacking.Algorithms
 
                 AnalyzeBox(hmx, hy, hmy, hz, hmz, _itemsToPack[_x].Dim1, _itemsToPack[_x].Dim3, _itemsToPack[_x].Dim2);
                 AnalyzeBox(hmx, hy, hmy, hz, hmz, _itemsToPack[_x].Dim2, _itemsToPack[_x].Dim1, _itemsToPack[_x].Dim3);
-                
+
                 AnalyzeBox(hmx, hy, hmy, hz, hmz, _itemsToPack[_x].Dim3, _itemsToPack[_x].Dim1, _itemsToPack[_x].Dim2);
 
                 // If the items can't be packed flagpole, we don't check for those orientations
-                if (!_itemsToPack[_x].CanBeFlagpole) continue;
+                //if(!_itemsToPack[_x].CanBeFlagpole) continue;
                 AnalyzeBox(hmx, hy, hmy, hz, hmz, _itemsToPack[_x].Dim2, _itemsToPack[_x].Dim3, _itemsToPack[_x].Dim1);
                 AnalyzeBox(hmx, hy, hmy, hz, hmz, _itemsToPack[_x].Dim3, _itemsToPack[_x].Dim2, _itemsToPack[_x].Dim1);
             }
@@ -463,6 +524,7 @@ namespace CromulentBisgetti.ContainerPacking.Algorithms
 
             for (_x = 1; _x <= _itemsToPackCount; _x++)
             {
+                // itemsToPackA/B/C
                 if (_itemsToPack[_x].IsPacked) continue;
 
                 for (y = 1; y <= 3; y++)
@@ -549,13 +611,19 @@ namespace CromulentBisgetti.ContainerPacking.Algorithms
         private void Initialize(Container container, List<Item> items)
         {
             _itemsToPack = new List<Item>();
+            _itemsToPackA = new List<Item>();
+            _itemsToPackB = new List<Item>();
+            _itemsToPackC = new List<Item>();
+            _itemsToPackCopy = new List<Item>();
             _itemsPackedInOrder = new List<Item>();
             _result = new ContainerPackingResult();
 
 
             // The original code uses 1-based indexing everywhere. This fake entry is added to the beginning
             // of the list to make that possible.
-            _itemsToPack.Add(new Item("0", 0, 0, 0, 0, true));
+            _itemsToPack.Add(new Item("0", 0, 0, 0, 0, true, 'C', false));
+            _itemsToPackA.Add(new Item("0", 0, 0, 0, 0, true, 'A', false));
+            _itemsToPackB.Add(new Item("0", 0, 0, 0, 0, true, 'B', false));
 
             _layers = new List<Layer>();
             _itemsToPackCount = 0;
@@ -564,14 +632,20 @@ namespace CromulentBisgetti.ContainerPacking.Algorithms
             {
                 for (int i = 1; i <= item.Quantity; i++)
                 {
-                    Item newItem = new Item(item.Id, item.Dim1, item.Dim2, item.Dim3, item.Quantity, item.CanBeFlagpole);
+                    Item newItem = new Item(item.Id, item.Dim1, item.Dim2, item.Dim3, item.Quantity, item.CanBeFlagpole, item.WeightDef, item.IsAbnormalShape);
                     _itemsToPack.Add(newItem);
                 }
 
                 _itemsToPackCount += item.Quantity;
             }
 
-            _itemsToPack.Add(new Item("0", 0, 0, 0, 0, true));
+            _itemsToPack.Add(new Item("0", 0, 0, 0, 0, true, 'C', false));
+
+            _itemsToPackCopy = _itemsToPack;
+            _itemsToPackCountCopy = _itemsToPackCount;
+           
+
+            // if countA is 0, set itemsToPack = to B or C as needed 
 
             _totalContainerVolume = container.Length * container.Height * container.Width;
             _totalItemVolume = 0.0M;
@@ -580,6 +654,37 @@ namespace CromulentBisgetti.ContainerPacking.Algorithms
             {
                 _totalItemVolume = _totalItemVolume + _itemsToPack[_x].Volume;
             }
+
+
+            _itemsToPackA.AddRange(_itemsToPack.Where<Item>(x => x.WeightDef == 'A').ToList());
+            _itemsToPackB.AddRange(_itemsToPack.Where<Item>(x => x.WeightDef == 'B').ToList());
+            _itemsToPackC.AddRange(_itemsToPack.Where<Item>(x => x.WeightDef == 'C').ToList());
+
+            _itemsToPackA.Add(new Item("0", 0, 0, 0, 0, true, 'A', false));
+            _itemsToPackB.Add(new Item("0", 0, 0, 0, 0, true, 'B', false));
+
+            _itemsToPackCountA = _itemsToPackA.Count - 2;
+            _itemsToPackCountB = _itemsToPackB.Count - 2;
+            _itemsToPackCountC = _itemsToPackC.Count - 2;
+
+
+            //if (_itemsToPackCountA != 0)
+            //{
+            //    _itemsToPack = _itemsToPackA;
+            //    _itemsToPackCount = _itemsToPackCountA;
+            //}
+            //else if (_itemsToPackCountB != 0)
+            //{
+            //    _itemsToPack = _itemsToPackB;
+            //    _itemsToPackCount = _itemsToPackCountB;
+            //}
+            //else if (_itemsToPackCountC != 0)
+            //{
+            //    _itemsToPack = _itemsToPackC;
+            //    _itemsToPackCount = _itemsToPackCountC;
+            //}
+
+
 
             _scrapfirst = new ScrapPad();
 
@@ -606,9 +711,11 @@ namespace CromulentBisgetti.ContainerPacking.Algorithms
             decimal layereval;
 
             _layerListLen = 0;
+            var counter = 0;
 
             for (_x = 1; _x <= _itemsToPackCount; _x++)
             {
+                counter++;
                 for (y = 1; y <= 3; y++)
                 {
                     switch (y)
@@ -673,6 +780,45 @@ namespace CromulentBisgetti.ContainerPacking.Algorithms
                     _layers[_layerListLen].LayerEval = layereval;
                     _layers[_layerListLen].LayerDim = exdim;
                 }
+
+                if (counter == _itemsToPackCountA && _itemsToPackCountB != 0)
+                {
+                    _x = 1;
+                    if (_itemsToPackCountA != 0)
+                        _itemsToPackA = _itemsToPack;
+                    _itemsToPack = _itemsToPackB;
+                    _itemsToPackCount = _itemsToPackCountB;
+
+                }
+                if (_packedItemCount == _itemsToPackCountA + _itemsToPackCountB && _itemsToPackCountC != 0 && _itemsToPackC != _itemsToPack)
+                {
+                    _x = 1;
+                    if (_itemsToPackCountB != 0)
+                        _itemsToPackB = _itemsToPack;
+                    else if (_itemsToPackCountA != 0)
+                        _itemsToPackA = _itemsToPack;
+                    _itemsToPack = _itemsToPackC;
+                    _itemsToPackCount = _itemsToPackCountC;
+                }
+
+                if (counter == _itemsToPackCountA + _itemsToPackCountB + _itemsToPackCountC )
+                {
+                    if (_itemsToPackCountA != 0)
+                    {
+                        _itemsToPack = _itemsToPackA;
+                        _itemsToPackCount = _itemsToPackCountA;
+                    }
+                    else if (_itemsToPackCountB != 0)
+                    {
+                        _itemsToPack = _itemsToPackB;
+                        _itemsToPackCount = _itemsToPackCountB;
+                    }
+                    else if (_itemsToPackCountC != 0)
+                    {
+                        _itemsToPack = _itemsToPackC;
+                        _itemsToPackCount = _itemsToPackCountC;
+                    }
+                }
             }
         }
 
@@ -682,6 +828,7 @@ namespace CromulentBisgetti.ContainerPacking.Algorithms
         /// </summary>
         private void OutputBoxList()
         {
+
             decimal packCoordX = 0;
             decimal packCoordY = 0;
             decimal packCoordZ = 0;
@@ -761,6 +908,7 @@ namespace CromulentBisgetti.ContainerPacking.Algorithms
         /// </summary>
         private void PackLayer()
         {
+
             decimal lenx;
             decimal lenz;
             decimal lpz;
@@ -1091,9 +1239,25 @@ namespace CromulentBisgetti.ContainerPacking.Algorithms
             _packingBest = true;
 
             Log.Information("BEST SOLUTION FOUND AT ITERATION {BestIteration} OF VARIANT {BestVariant}", _bestIteration, _bestVariant);
-            Log.Information("TOTAL ITEMS TO PACK {ItemsToPackCount} - {ItemQuantity}", _itemsToPackCount, _itemsToPack.Sum(x=>x.Quantity));
+            Log.Information("TOTAL ITEMS TO PACK {ItemsToPackCount} - {ItemQuantity}", _itemsToPackCountCopy, _itemsToPackCopy.Sum(x => x.Quantity));
             Log.Information("TOTAL VOLUME OF ALL ITEMS {TotalItemVolume}", _totalItemVolume);
             Log.Information("WHILE CONTAINER ORIENTATION X - Y - Z {X}, {Y}, {Z}:", _px, _py, _pz);
+
+            if (_itemsToPackCountA != 0)
+            {
+                _itemsToPack = _itemsToPackA;
+                _itemsToPackCount = _itemsToPackCountA;
+            }
+            else if (_itemsToPackCountB != 0)
+            {
+                _itemsToPack = _itemsToPackB;
+                _itemsToPackCount = _itemsToPackCountB;
+            }
+            else if (_itemsToPackCountC != 0)
+            {
+                _itemsToPack = _itemsToPackC;
+                _itemsToPackCount = _itemsToPackCountC;
+            }
 
             _layers.Clear();
             _layers.Add(new Layer { LayerEval = -1 });
@@ -1102,6 +1266,7 @@ namespace CromulentBisgetti.ContainerPacking.Algorithms
             _packedVolume = 0;
             _packedy = 0;
             _packing = true;
+            _packedItemCount = 0;
             try
             {
                 _layerThickness = _layers[_bestIteration].LayerDim;
@@ -1115,9 +1280,47 @@ namespace CromulentBisgetti.ContainerPacking.Algorithms
             _remainpy = _py;
             _remainpz = _pz;
 
+            // Reset itemsToPack here
+
+            _itemsToPack = _itemsToPackCopy;
+            _itemsToPackCount = _itemsToPackCountCopy;
+
+            // makes all items in array unpacked
             for (_x = 1; _x <= _itemsToPackCount; _x++)
             {
                 _itemsToPack[_x].IsPacked = false;
+            }
+
+            // clear itemsToPack before adding range?
+            _itemsToPackA.Clear();
+            _itemsToPackB.Clear();
+            _itemsToPackC.Clear();
+
+            _itemsToPackA.Add(new Item("0", 0, 0, 0, 0, true, 'A', false));
+            _itemsToPackB.Add(new Item("0", 0, 0, 0, 0, true, 'B', false));
+
+            _itemsToPackA.AddRange(_itemsToPack.Where<Item>(x => x.WeightDef == 'A').ToList());
+            _itemsToPackB.AddRange(_itemsToPack.Where<Item>(x => x.WeightDef == 'B').ToList());
+            _itemsToPackC.AddRange(_itemsToPack.Where<Item>(x => x.WeightDef == 'C').ToList());
+
+            _itemsToPackA.Add(new Item("0", 0, 0, 0, 0, true, 'A', false));
+            _itemsToPackB.Add(new Item("0", 0, 0, 0, 0, true, 'B', false));
+
+
+            if (_itemsToPackCountA != 0)
+            {
+                _itemsToPack = _itemsToPackA;
+                _itemsToPackCount = _itemsToPackCountA;
+            }
+            else if (_itemsToPackCountB != 0)
+            {
+                _itemsToPack = _itemsToPackB;
+                _itemsToPackCount = _itemsToPackCountB;
+            }
+            else if (_itemsToPackCountC != 0)
+            {
+                _itemsToPack = _itemsToPackC;
+                _itemsToPackCount = _itemsToPackCountC;
             }
 
             do
@@ -1153,8 +1356,9 @@ namespace CromulentBisgetti.ContainerPacking.Algorithms
         /// <summary>
         /// After packing of each item, the 100% packing condition is checked.
         /// </summary>
+        /// TODO Here is where we will iterate through the assignments as to what _itemsToPack is currently, reset _x = 1
         private void VolumeCheck()
-        {
+        { // TODO Make sure itemsToPack is looped through each time we output results
             _itemsToPack[_cboxi].IsPacked = true;
             _itemsToPack[_cboxi].PackDimX = _cboxx;
             _itemsToPack[_cboxi].PackDimY = _cboxy;
@@ -1166,11 +1370,35 @@ namespace CromulentBisgetti.ContainerPacking.Algorithms
             {
                 OutputBoxList();
             }
-            else if (_packedVolume == _totalContainerVolume || _packedVolume == _totalItemVolume)
+            
+
+            if (_packedItemCount == _itemsToPackCountA && _itemsToPackCountB != 0)
+            {
+                _x = 1;
+                if (_itemsToPackCountA != 0)
+                    _itemsToPackA = _itemsToPack;
+                _itemsToPack = _itemsToPackB;
+                _itemsToPackCount = _itemsToPackCountB;
+
+            }
+            if (_packedItemCount == _itemsToPackCountA + _itemsToPackCountB && _itemsToPackCountC != 0)
+            {
+                _x = 1;
+                if (_itemsToPackCountB != 0)
+                    _itemsToPackB = _itemsToPack;
+                else if (_itemsToPackCountA != 0)
+                    _itemsToPackA = _itemsToPack;
+                _itemsToPack = _itemsToPackC;
+                _itemsToPackCount = _itemsToPackCountC;
+            }
+
+            if (_packedVolume == _totalContainerVolume || _packedVolume == _totalItemVolume && !_packingBest)
             {
                 _packing = false;
                 _hundredPercentPacked = true;
             }
+
+
         }
 
         #endregion Private Methods

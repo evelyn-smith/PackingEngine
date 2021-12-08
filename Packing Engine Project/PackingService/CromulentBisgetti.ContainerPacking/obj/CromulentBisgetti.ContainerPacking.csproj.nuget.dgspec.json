@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ers007\\source\\repos\\PackingEngine\\Packing Engine Project\\PackingService\\CromulentBisgetti.ContainerPacking\\CromulentBisgetti.ContainerPacking.csproj": {}
+    "C:\\Users\\ers007\\Source\\Repos\\PackingEngine\\Packing Engine Project\\PackingService\\CromulentBisgetti.ContainerPacking\\CromulentBisgetti.ContainerPacking.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ers007\\source\\repos\\PackingEngine\\Packing Engine Project\\PackingService\\CromulentBisgetti.ContainerPacking\\CromulentBisgetti.ContainerPacking.csproj": {
+    "C:\\Users\\ers007\\Source\\Repos\\PackingEngine\\Packing Engine Project\\PackingService\\CromulentBisgetti.ContainerPacking\\CromulentBisgetti.ContainerPacking.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ers007\\source\\repos\\PackingEngine\\Packing Engine Project\\PackingService\\CromulentBisgetti.ContainerPacking\\CromulentBisgetti.ContainerPacking.csproj",
+        "projectUniqueName": "C:\\Users\\ers007\\Source\\Repos\\PackingEngine\\Packing Engine Project\\PackingService\\CromulentBisgetti.ContainerPacking\\CromulentBisgetti.ContainerPacking.csproj",
         "projectName": "CromulentBisgetti.ContainerPacking",
-        "projectPath": "C:\\Users\\ers007\\source\\repos\\PackingEngine\\Packing Engine Project\\PackingService\\CromulentBisgetti.ContainerPacking\\CromulentBisgetti.ContainerPacking.csproj",
+        "projectPath": "C:\\Users\\ers007\\Source\\Repos\\PackingEngine\\Packing Engine Project\\PackingService\\CromulentBisgetti.ContainerPacking\\CromulentBisgetti.ContainerPacking.csproj",
         "packagesPath": "C:\\Users\\ers007\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ers007\\source\\repos\\PackingEngine\\Packing Engine Project\\PackingService\\CromulentBisgetti.ContainerPacking\\obj\\",
+        "outputPath": "C:\\Users\\ers007\\Source\\Repos\\PackingEngine\\Packing Engine Project\\PackingService\\CromulentBisgetti.ContainerPacking\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ers007\\AppData\\Roaming\\NuGet\\NuGet.Config",

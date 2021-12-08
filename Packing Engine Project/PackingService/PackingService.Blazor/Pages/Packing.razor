@@ -1,4 +1,4 @@
-﻿@page "/packing"
+﻿@page "/"
 
 @using CromulentBisgetti.ContainerPacking.Entities
 @using PackingService.Blazor.Data
@@ -295,7 +295,7 @@
     protected override async Task OnInitializedAsync()
     {
         _packingResults = new List<AlgorithmPackingResult>();
-        _custOrderNo = "R44999";
+        _custOrderNo = "R4888";
         //await GetAlgorithms();
         await GetItems();
         //await GetPallets();

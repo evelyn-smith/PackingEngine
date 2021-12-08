@@ -35,7 +35,6 @@ namespace PackingService.Blazor
         {
             services.AddRazorPages();
             services.AddServerSideBlazor();
-            services.AddSingleton<WeatherForecastService>();
             services.AddSingleton<BoxService>();
         }
 

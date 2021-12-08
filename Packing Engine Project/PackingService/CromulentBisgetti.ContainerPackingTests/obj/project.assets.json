@@ -5923,11 +5923,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ers007\\source\\repos\\PackingEngine\\Packing Engine Project\\PackingService\\CromulentBisgetti.ContainerPackingTests\\CromulentBisgetti.ContainerPackingTests.csproj",
+      "projectUniqueName": "C:\\Users\\ers007\\Source\\Repos\\PackingEngine\\Packing Engine Project\\PackingService\\CromulentBisgetti.ContainerPackingTests\\CromulentBisgetti.ContainerPackingTests.csproj",
       "projectName": "CromulentBisgetti.ContainerPackingTests",
-      "projectPath": "C:\\Users\\ers007\\source\\repos\\PackingEngine\\Packing Engine Project\\PackingService\\CromulentBisgetti.ContainerPackingTests\\CromulentBisgetti.ContainerPackingTests.csproj",
+      "projectPath": "C:\\Users\\ers007\\Source\\Repos\\PackingEngine\\Packing Engine Project\\PackingService\\CromulentBisgetti.ContainerPackingTests\\CromulentBisgetti.ContainerPackingTests.csproj",
       "packagesPath": "C:\\Users\\ers007\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ers007\\source\\repos\\PackingEngine\\Packing Engine Project\\PackingService\\CromulentBisgetti.ContainerPackingTests\\obj\\",
+      "outputPath": "C:\\Users\\ers007\\Source\\Repos\\PackingEngine\\Packing Engine Project\\PackingService\\CromulentBisgetti.ContainerPackingTests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ers007\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -5944,8 +5944,8 @@
         "netcoreapp2.1": {
           "targetAlias": "netcoreapp2.1",
           "projectReferences": {
-            "C:\\Users\\ers007\\source\\repos\\PackingEngine\\Packing Engine Project\\PackingService\\CromulentBisgetti.ContainerPacking\\CromulentBisgetti.ContainerPacking.csproj": {
-              "projectPath": "C:\\Users\\ers007\\source\\repos\\PackingEngine\\Packing Engine Project\\PackingService\\CromulentBisgetti.ContainerPacking\\CromulentBisgetti.ContainerPacking.csproj"
+            "C:\\Users\\ers007\\Source\\Repos\\PackingEngine\\Packing Engine Project\\PackingService\\CromulentBisgetti.ContainerPacking\\CromulentBisgetti.ContainerPacking.csproj": {
+              "projectPath": "C:\\Users\\ers007\\Source\\Repos\\PackingEngine\\Packing Engine Project\\PackingService\\CromulentBisgetti.ContainerPacking\\CromulentBisgetti.ContainerPacking.csproj"
             }
           }
         }

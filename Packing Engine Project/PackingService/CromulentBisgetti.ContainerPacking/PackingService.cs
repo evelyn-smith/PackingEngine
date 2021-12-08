@@ -41,7 +41,7 @@ namespace CromulentBisgetti.ContainerPacking
 
                     itemsToPack.ForEach(item =>
                     {
-                        items.Add(new Item(item.Id, item.Dim1, item.Dim2, item.Dim3, item.Quantity, item.CanBeFlagpole));
+                        items.Add(new Item(item.Id, item.Dim1, item.Dim2, item.Dim3, item.Quantity, item.CanBeFlagpole, item.WeightDef, item.IsAbnormalShape));
                     });
 
                     Stopwatch stopwatch = new Stopwatch();
@@ -100,7 +100,7 @@ namespace CromulentBisgetti.ContainerPacking
 
             itemsToPack.ForEach(item =>
             {
-                var newItem = new Item(item.Id, item.Dim1, item.Dim2, item.Dim3, item.Quantity, item.CanBeFlagpole);
+                var newItem = new Item(item.Id, item.Dim1, item.Dim2, item.Dim3, item.Quantity, item.CanBeFlagpole, item.WeightDef, item.IsAbnormalShape);
                 if(item.MaxDimension > container.MaxDimension)
                 {
                     Log.Error(
@@ -109,8 +109,9 @@ namespace CromulentBisgetti.ContainerPacking
                 }
                 else
                 {
-                    //Layer these first if possible
-                    items.AddRange(LayerItems(container, newItem));
+                    //Layer these first if possible-- Doing this by layer messes up the weighting method currently implemented
+                    //items.AddRange(LayerItems(container, newItem));
+                    items.Add(newItem);
                 }
             });
 
@@ -205,9 +206,9 @@ namespace CromulentBisgetti.ContainerPacking
             var layerCount = item.Quantity / layerQuantity;
             var leftoverQuantity = item.Quantity % layerQuantity;
 
-            var layerItem = new Item($"{item.Id}-LayerOf-{layerQuantity}", layerX, layerY, layerZ,  layerCount, item.CanBeFlagpole);
+            var layerItem = new Item($"{item.Id}-LayerOf-{layerQuantity}", layerX, layerY, layerZ,  layerCount, item.CanBeFlagpole, item.WeightDef, item.IsAbnormalShape);
             //layerItem.IsLayer = true;
-            var leftoverItem = new Item(item.Id, item.Dim1, item.Dim2, item.Dim3, leftoverQuantity, item.CanBeFlagpole);
+            var leftoverItem = new Item(item.Id, item.Dim1, item.Dim2, item.Dim3, leftoverQuantity, item.CanBeFlagpole, item.WeightDef, item.IsAbnormalShape);
 
             Log.Information("Was able to layer {Item} into LayerCount {LayerCount} of LayerQuantity {LayerQuantity} with Leftover Quantity {LeftoverQuantity}", item, layerCount, layerQuantity, leftoverQuantity);
 
