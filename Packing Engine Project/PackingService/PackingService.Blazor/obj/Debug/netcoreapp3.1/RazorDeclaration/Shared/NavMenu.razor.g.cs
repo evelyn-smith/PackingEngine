@@ -83,7 +83,7 @@ using PackingService.Blazor.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 18 "C:\Users\ers007\Source\Repos\PackingEngine\Packing Engine Project\PackingService\PackingService.Blazor\Shared\NavMenu.razor"
+#line 11 "C:\Users\ers007\Source\Repos\PackingEngine\Packing Engine Project\PackingService\PackingService.Blazor\Shared\NavMenu.razor"
        
     private bool collapseNavMenu = false;
 

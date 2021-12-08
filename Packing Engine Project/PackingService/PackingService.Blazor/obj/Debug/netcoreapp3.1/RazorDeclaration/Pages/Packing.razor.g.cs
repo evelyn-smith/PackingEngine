@@ -98,7 +98,7 @@ using PackingService.Blazor.Data;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 293 "C:\Users\ers007\Source\Repos\PackingEngine\Packing Engine Project\PackingService\PackingService.Blazor\Pages\Packing.razor"
+#line 271 "C:\Users\ers007\Source\Repos\PackingEngine\Packing Engine Project\PackingService\PackingService.Blazor\Pages\Packing.razor"
        
     //private List<int> _algorithms = new List<int>();
     private List<Item> _items = new List<Item>();
@@ -127,57 +127,12 @@ using PackingService.Blazor.Data;
 
     private void Pack()
     {
-
-        //var indexId = 0;
-
-        // var unPackedItems = _items;
-        //while (unPackedItems.Any())
-        // {
         _packingResults = CromulentBisgetti.ContainerPacking.PackingService.PackContainer(_container, _items);
-        // packingResult.IndexId = indexId;
-        //  indexId++;
-        //  _packingResults.Add(packingResult);
 
-        //  foreach (var item in packingResult.PackedItems)
-        //  {
-        //      unPackedItems.Remove(item);
-        //  }
 
         JSRuntime.InvokeAsync<string>("InitializeDrawing");
 
-        //InitializeDrawing(indexId);
-
-        //var commands = new List<string>();
-
-        //commands.Add($"camera.position.set({_container.MaxDimension}, {_container.MaxDimension}, {_container.MaxDimension});");
-        //commands.Add($"var geometry = new THREE.BoxGeometry({_container.Length}, {_container.Height}, {_container.Width});");
-        //commands.Add("var geo = new THREE.EdgesGeometry(geometry);");
-        //commands.Add("var mat = new THREE.LineBasicMaterial({ color: 0x000000, linewidth: 2 });");
-        //commands.Add("var wireframe = new THREE.LineSegments(geo, mat);");
-        //commands.Add("wireframe.position.set(0, 0, 0);");
-        //commands.Add("wireframe.name = 'container';");
-        //commands.Add("wireframe.name = 'container';");
-
-        //RunJsCommands(commands);
-        //}
-
-        //var packResult = _packResults.FirstOrDefault();
-        //var container = _containers.FirstOrDefault(x => x.Id == packResult.ContainerId);
-
-        //JSRuntime.InvokeAsync<string>("InitializeDrawing");
-
-        //var commands = new List<string>();
-
-        //commands.Add($"camera.position.set({container.MaxDimension}, {container.MaxDimension}, {container.MaxDimension});");
-        //commands.Add($"var geometry = new THREE.BoxGeometry({container.Length}, {container.Height}, {container.Width});");
-        //commands.Add("var geo = new THREE.EdgesGeometry(geometry);");
-        //commands.Add("var mat = new THREE.LineBasicMaterial({ color: 0x000000, linewidth: 2 });");
-        //commands.Add("var wireframe = new THREE.LineSegments(geo, mat);");
-        //commands.Add("wireframe.position.set(0, 0, 0);");
-        //commands.Add("wireframe.name = 'container';");
-        //commands.Add("wireframe.name = 'container';");
-
-        //RunJsCommands(commands);
+    
 
         _selectedPackingResult = 0;
         Visualize();
@@ -189,82 +144,6 @@ using PackingService.Blazor.Data;
         JSRuntime.InvokeAsync<string>("SetData", System.Text.Json.JsonSerializer.Serialize(_packingResults[_selectedPackingResult].PackedItems));
     }
 
-    //private void InitializeDrawing(int indexId)
-    //{
-    //    var commands = new List<string>();
-
-    //    commands.Add($"var scenes-{indexId};");
-    //    commands.Add($"var camera-{indexId};");
-    //    commands.Add($"var renderer-{indexId};");
-    //    commands.Add($"var controls-{indexId};");
-    //    commands.Add($"var viewModel-{indexId};");
-    //    commands.Add($"var itemMaterial-{indexId};");
-
-
-    //    commands.Add($"var drawingContainer-{indexId} = $('#drawing-container-{indexId}');");
-
-    //    commands.Add($"scene-{indexId} = new THREE.Scene();");
-    //    commands.Add($"camera-{indexId} = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 1000);");
-    //    commands.Add($"camera-{indexId}.lookAt(scene-{indexId}.position);");
-
-    //    //var axisHelper = new THREE.AxisHelper( 5 );
-    //    //scene.add( axisHelper );
-
-    //    // LIGHT
-    //    commands.Add($"var light-{indexId} = new THREE.PointLight(0xffffff);");
-    //    commands.Add($"light-{indexId}.position.set(0, 150, 100);");
-    //    commands.Add($"scene-{indexId}.add(light-{indexId});");
-
-    //    // Get the item stuff ready.
-    //    commands.Add($"itemMaterial-{indexId} = new THREE.MeshNormalMaterial({{ transparent: true, opacity: 0.6 }});");
-
-
-    //    commands.Add($"renderer-{indexId} = new THREE.WebGLRenderer({{ antialias: true }});");
-    //    commands.Add($"renderer-{indexId}.setClearColor(0xf0f0f0);");
-    //    commands.Add($"renderer-{indexId}.setPixelRatio(window.devicePixelRatio);");
-    //    commands.Add($"renderer-{indexId}.setSize(window.innerWidth / 2, window.innerHeight / 2);");
-    //    commands.Add($"drawingContainer-{indexId}.append(renderer-{indexId}.domElement);");
-
-    //    commands.Add($"controls-{indexId} = new THREE.OrbitControls(camera-{indexId}, renderer.domElement);");
-    //    commands.Add($"window.addEventListener('resize', onWindowResize, false);");
-
-    //    commands.Add($"animate();");
-    //    RunJsCommands(commands);
-    //}
-
-    //private void ShowNext(int indexId)
-    //{
-    //    var packResult = _packingResults[indexId];
-    //    var containerOriginOffsetX = -1 * _container.Length / 2;
-    //    var containerOriginOffsetY = -1 * _container.Height / 2;
-    //    var containerOriginOffsetZ = -1 * _container.Width / 2;
-
-
-    //    var itemToRender = packResult.PackedItems[itemCounter];
-    //    itemCounter++;
-    //    var commands = new List<string>();
-    //    commands.Add($"var itemGeometry = new THREE.BoxGeometry({itemToRender.PackDimX}, {itemToRender.PackDimY}, {itemToRender.PackDimZ});");
-    //    commands.Add($"var cube = new THREE.Mesh(itemGeometry, itemMaterial);");
-    //    commands.Add($"cube.position.set({containerOriginOffsetX} + {itemToRender.PackDimX / 2} + {itemToRender.CoordX}, {containerOriginOffsetY} + {itemToRender.PackDimY / 2} + {itemToRender.CoordY}, {containerOriginOffsetZ} + {itemToRender.PackDimZ / 2} + {itemToRender.CoordZ});");
-    //    commands.Add($"cube.name = 'cube' + {itemCounter};");
-    //    commands.Add($"scene.add(cube);");
-    //    RunJsCommands(commands);
-
-    //}
-
-    //private void RunJsCommands(List<string> commands)
-    //{
-    //    foreach (var command in commands)
-    //    {
-    //        JSRuntime.InvokeAsync<string>(command);
-    //    }
-    //}
-
-    //private async Task GetPallets()
-    //{
-    //    _containerType = "Pallets";
-    //    _containers = await BoxService.GetPalletsAsync();
-    //}
 
     private async Task GetSmallPackageBoxes()
     {
@@ -276,11 +155,6 @@ using PackingService.Blazor.Data;
     {
         _items = await BoxService.GetItemsAsync(_custOrderNo);
     }
-
-    //private async Task GetAlgorithms()
-    //{
-    //    _algorithms = await BoxService.GetAlgorithmsAsync();
-    //}
 
     private void ShowNext()
     {
