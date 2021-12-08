@@ -98,7 +98,7 @@ using PackingService.Blazor.Data;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 281 "C:\Users\ers007\Source\Repos\PackingEngine\Packing Engine Project\PackingService\PackingService.Blazor\Pages\Packing.razor"
+#line 293 "C:\Users\ers007\Source\Repos\PackingEngine\Packing Engine Project\PackingService\PackingService.Blazor\Pages\Packing.razor"
        
     //private List<int> _algorithms = new List<int>();
     private List<Item> _items = new List<Item>();
@@ -110,6 +110,7 @@ using PackingService.Blazor.Data;
 
     private string _custOrderNo;
     private string _containerType;
+    private string _flagpoleText;
 
     private int itemCounter = 0;
 
